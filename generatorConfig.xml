@@ -12,10 +12,14 @@
         <!-- 数据库链接URL、用户名、密码 -->  
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"  
             connectionURL="jdbc:mysql://localhost:3306/stock" userId="root" password="root" />  
+            
+            <javaTypeResolver>  
+            <property name="forceBigDecimals" value="false" />  
+        </javaTypeResolver>  
         <!-- 生成模型的包名和位置 -->  
         <javaModelGenerator targetPackage="com.zrf.stock.entity" targetProject="stock/src/main/java" />  
         <!-- 生成的映射文件报名和位置 -->  
-        <sqlMapGenerator targetPackage="com.zrf.stock.mapper" targetProject="stock/src/main/java" />  
+        <sqlMapGenerator targetPackage="com.zrf.stock.mapping" targetProject="stock/src/main/java" />  
         <!-- 生成DAO的包名和位置 -->  
         <javaClientGenerator targetPackage="com.zrf.stock.dao" targetProject="stock/src/main/java" type="XMLMAPPER" />  
         <!-- 要生成的那些表(更改tableName 和domainObjectName 就可以了) -->  

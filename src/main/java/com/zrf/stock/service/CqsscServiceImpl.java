@@ -1,9 +1,11 @@
-package com.zrf.stock;
+package com.zrf.stock.service;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,13 +15,26 @@ import com.zrf.stock.entity.CqsscData;
 
 @Service
 public class CqsscServiceImpl implements CqsscServiceI {
+
+	@Resource  
+    public CqsscDataMapper cqsscMapper;  
+	 
 	@Override
 	public String getCurrentNum(){
-		CqsscData data = cqsscMapper.selectByPrimaryKey(Integer.getInteger("1"));
+		CqsscData data = cqsscMapper.selectByPrimaryKey("");
+		
 		return "data";
 	}
 	
-	@Autowired  
-    private CqsscDataMapper cqsscMapper;  
+	@Override
+	public CqsscData selectByPrimaryKey(String key){
+		return cqsscMapper.selectByPrimaryKey(key);
+	}
+	
+	@Override
+	public int save(CqsscData data){
+		return cqsscMapper.insert(data);
+	}
+	
       
 }

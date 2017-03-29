@@ -3,7 +3,7 @@ package com.zrf.stock.entity;
 import java.util.Date;
 
 public class CqsscData {
-    private Integer ID;
+    private String ID;
 
     private String DAY;
 
@@ -41,11 +41,11 @@ public class CqsscData {
 
     private Date createTime;
 
-    public Integer getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(Integer ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 

@@ -1,0 +1,661 @@
+2017-03-23 00:02:01,720 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@14086c4b]
+  2017-03-23 00:02:01,724 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:02:01,724 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322119(String)
+  2017-03-23 00:02:01,730 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@ece6285]
+  2017-03-23 00:02:01,731 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 00:02:01,732 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322119(String), 20170322119(String), 16498(String), 1(Integer), 6(Integer), 4(Integer), 9(Integer), 8(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 00:02:01,738 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@34dcca69]
+  2017-03-23 00:02:01,738 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:02:01,738 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322118(String)
+  2017-03-23 00:02:01,744 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@70ce3c50]
+  2017-03-23 00:02:01,744 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:02:01,744 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322117(String)
+  2017-03-23 00:02:01,750 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@756ece14]
+  2017-03-23 00:02:01,750 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:02:01,750 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322116(String)
+  2017-03-23 00:02:01,756 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6766bd9c]
+  2017-03-23 00:02:01,756 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:02:01,757 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322115(String)
+  2017-03-23 00:02:01,763 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@28ef32f1]
+  2017-03-23 00:02:01,763 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:02:01,763 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322114(String)
+  2017-03-23 00:02:01,772 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@23b92670]
+  2017-03-23 00:02:01,772 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:02:01,773 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322113(String)
+  2017-03-23 00:02:01,784 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@1d89075b]
+  2017-03-23 00:02:01,785 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:02:01,785 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322112(String)
+  2017-03-23 00:02:01,793 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@57852168]
+  2017-03-23 00:02:01,793 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:02:01,794 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322111(String)
+  2017-03-23 00:02:01,800 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@fc51f1a]
+  2017-03-23 00:02:01,800 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:02:01,801 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322110(String)
+  2017-03-23 00:07:00,249 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5aa29263]
+  2017-03-23 00:07:00,250 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:07:00,250 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322120(String)
+  2017-03-23 00:07:00,255 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@148ccf57]
+  2017-03-23 00:07:00,255 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 00:07:00,256 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322120(String), 20170322120(String), 27039(String), 2(Integer), 7(Integer), 0(Integer), 3(Integer), 9(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 00:07:00,263 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@d943cc1]
+  2017-03-23 00:07:00,263 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:07:00,263 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322119(String)
+  2017-03-23 00:07:00,268 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3ec821ef]
+  2017-03-23 00:07:00,269 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:07:00,269 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322118(String)
+  2017-03-23 00:07:00,275 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5fd15d33]
+  2017-03-23 00:07:00,275 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:07:00,275 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322117(String)
+  2017-03-23 00:07:00,281 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@45fb8fa0]
+  2017-03-23 00:07:00,281 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:07:00,281 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322116(String)
+  2017-03-23 00:07:00,286 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5068b265]
+  2017-03-23 00:07:00,287 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:07:00,287 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322115(String)
+  2017-03-23 00:07:00,292 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3e35d618]
+  2017-03-23 00:07:00,292 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:07:00,292 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322114(String)
+  2017-03-23 00:07:00,298 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@669be707]
+  2017-03-23 00:07:00,298 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:07:00,298 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322113(String)
+  2017-03-23 00:07:00,304 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@7f5e4489]
+  2017-03-23 00:07:00,304 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:07:00,304 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322112(String)
+  2017-03-23 00:07:00,310 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4c2cc760]
+  2017-03-23 00:07:00,310 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:07:00,310 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322111(String)
+  2017-03-23 00:12:16,129 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@33b988fb]
+  2017-03-23 00:12:16,130 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:12:16,130 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323001(String)
+  2017-03-23 00:12:16,136 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3e3d14bd]
+  2017-03-23 00:12:16,136 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 00:12:16,140 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323001(String), 20170323001(String), 96318(String), 9(Integer), 6(Integer), 3(Integer), 1(Integer), 8(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 00:12:16,146 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3da7cb53]
+  2017-03-23 00:12:16,146 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:12:16,146 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322120(String)
+  2017-03-23 00:12:16,152 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@56f109dc]
+  2017-03-23 00:12:16,153 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:12:16,153 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322119(String)
+  2017-03-23 00:12:16,158 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@520f104]
+  2017-03-23 00:12:16,159 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:12:16,159 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322118(String)
+  2017-03-23 00:12:16,164 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@64ac0352]
+  2017-03-23 00:12:16,164 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:12:16,165 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322117(String)
+  2017-03-23 00:12:16,170 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@153750de]
+  2017-03-23 00:12:16,170 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:12:16,170 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322116(String)
+  2017-03-23 00:12:16,176 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@520337ec]
+  2017-03-23 00:12:16,176 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:12:16,176 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322115(String)
+  2017-03-23 00:12:16,182 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@49ecfa6d]
+  2017-03-23 00:12:16,183 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:12:16,183 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322114(String)
+  2017-03-23 00:12:16,189 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@46e24a1f]
+  2017-03-23 00:12:16,189 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:12:16,189 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322113(String)
+  2017-03-23 00:12:16,194 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4a62d0c]
+  2017-03-23 00:12:16,195 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:12:16,195 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322112(String)
+  2017-03-23 00:17:00,235 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@475ac4b0]
+  2017-03-23 00:17:00,236 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:17:00,237 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323002(String)
+  2017-03-23 00:17:00,243 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2fa99e40]
+  2017-03-23 00:17:00,244 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 00:17:00,245 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323002(String), 20170323002(String), 27551(String), 2(Integer), 7(Integer), 5(Integer), 5(Integer), 1(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 00:17:00,250 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6adc3ec6]
+  2017-03-23 00:17:00,251 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:17:00,251 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323001(String)
+  2017-03-23 00:17:00,257 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@64b5646d]
+  2017-03-23 00:17:00,257 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:17:00,257 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322120(String)
+  2017-03-23 00:17:00,263 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6fa11503]
+  2017-03-23 00:17:00,264 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:17:00,264 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322119(String)
+  2017-03-23 00:17:00,270 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@77972b53]
+  2017-03-23 00:17:00,270 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:17:00,270 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322118(String)
+  2017-03-23 00:17:00,278 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@54c6ca1b]
+  2017-03-23 00:17:00,278 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:17:00,278 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322117(String)
+  2017-03-23 00:17:00,287 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@28b790f2]
+  2017-03-23 00:17:00,287 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:17:00,287 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322116(String)
+  2017-03-23 00:17:00,293 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@45ac2fc4]
+  2017-03-23 00:17:00,294 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:17:00,294 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322115(String)
+  2017-03-23 00:17:00,300 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@33d11d5b]
+  2017-03-23 00:17:00,300 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:17:00,300 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322114(String)
+  2017-03-23 00:17:00,306 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@448e0136]
+  2017-03-23 00:17:00,306 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:17:00,306 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322113(String)
+  2017-03-23 00:22:00,188 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@1484b16f]
+  2017-03-23 00:22:00,190 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:22:00,191 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323003(String)
+  2017-03-23 00:22:00,198 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@77a3cd8b]
+  2017-03-23 00:22:00,198 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 00:22:00,199 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323003(String), 20170323003(String), 81698(String), 8(Integer), 1(Integer), 6(Integer), 9(Integer), 8(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 00:22:00,204 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@165f5ea8]
+  2017-03-23 00:22:00,204 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:22:00,205 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323002(String)
+  2017-03-23 00:22:00,211 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6df68a8]
+  2017-03-23 00:22:00,211 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:22:00,211 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323001(String)
+  2017-03-23 00:22:00,217 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@7d6e1ee7]
+  2017-03-23 00:22:00,217 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:22:00,217 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322120(String)
+  2017-03-23 00:22:00,222 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4b2c87dd]
+  2017-03-23 00:22:00,223 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:22:00,223 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322119(String)
+  2017-03-23 00:22:00,229 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@46a7cfad]
+  2017-03-23 00:22:00,229 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:22:00,229 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322118(String)
+  2017-03-23 00:22:00,235 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@14af33f2]
+  2017-03-23 00:22:00,236 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:22:00,236 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322117(String)
+  2017-03-23 00:22:00,242 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@183fc441]
+  2017-03-23 00:22:00,242 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:22:00,243 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322116(String)
+  2017-03-23 00:22:00,249 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@25121524]
+  2017-03-23 00:22:00,249 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:22:00,250 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322115(String)
+  2017-03-23 00:22:00,259 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@13c244a8]
+  2017-03-23 00:22:00,260 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:22:00,260 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322114(String)
+  2017-03-23 00:27:00,241 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6f182a97]
+  2017-03-23 00:27:00,243 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:27:00,243 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323004(String)
+  2017-03-23 00:27:00,249 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@126bca57]
+  2017-03-23 00:27:00,249 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 00:27:00,250 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323004(String), 20170323004(String), 26732(String), 2(Integer), 6(Integer), 7(Integer), 3(Integer), 2(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 00:27:00,255 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4d254316]
+  2017-03-23 00:27:00,255 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:27:00,256 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323003(String)
+  2017-03-23 00:27:00,261 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@158b82b2]
+  2017-03-23 00:27:00,262 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:27:00,262 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323002(String)
+  2017-03-23 00:27:00,267 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3958d3d0]
+  2017-03-23 00:27:00,268 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:27:00,268 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323001(String)
+  2017-03-23 00:27:00,273 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5c4f4b72]
+  2017-03-23 00:27:00,273 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:27:00,274 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322120(String)
+  2017-03-23 00:27:00,279 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@27ed6ab7]
+  2017-03-23 00:27:00,279 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:27:00,279 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322119(String)
+  2017-03-23 00:27:00,285 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@7c523b25]
+  2017-03-23 00:27:00,285 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:27:00,285 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322118(String)
+  2017-03-23 00:27:00,293 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5f6edea3]
+  2017-03-23 00:27:00,293 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:27:00,294 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322117(String)
+  2017-03-23 00:27:00,302 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@401c4917]
+  2017-03-23 00:27:00,303 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:27:00,303 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322116(String)
+  2017-03-23 00:27:00,311 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@7cd2e4f9]
+  2017-03-23 00:27:00,312 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:27:00,312 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322115(String)
+  2017-03-23 00:32:16,485 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6c17c4e4]
+  2017-03-23 00:32:16,486 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:32:16,486 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323005(String)
+  2017-03-23 00:32:16,492 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4b6cd8e5]
+  2017-03-23 00:32:16,493 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 00:32:16,494 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323005(String), 20170323005(String), 66681(String), 6(Integer), 6(Integer), 6(Integer), 8(Integer), 1(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 00:32:16,506 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5ca69a43]
+  2017-03-23 00:32:16,506 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:32:16,506 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323004(String)
+  2017-03-23 00:32:16,512 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2c48584a]
+  2017-03-23 00:32:16,512 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:32:16,512 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323003(String)
+  2017-03-23 00:32:16,518 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@14407e21]
+  2017-03-23 00:32:16,518 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:32:16,519 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323002(String)
+  2017-03-23 00:32:16,524 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@533435b1]
+  2017-03-23 00:32:16,524 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:32:16,524 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323001(String)
+  2017-03-23 00:32:16,529 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4c7d9767]
+  2017-03-23 00:32:16,530 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:32:16,530 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322120(String)
+  2017-03-23 00:32:16,535 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2c2b7197]
+  2017-03-23 00:32:16,535 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:32:16,536 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322119(String)
+  2017-03-23 00:32:16,541 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@1cfc5cb8]
+  2017-03-23 00:32:16,541 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:32:16,542 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322118(String)
+  2017-03-23 00:32:16,548 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2255172f]
+  2017-03-23 00:32:16,548 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:32:16,548 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322117(String)
+  2017-03-23 00:32:16,554 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@62b46b03]
+  2017-03-23 00:32:16,554 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:32:16,554 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322116(String)
+  2017-03-23 00:37:01,744 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@7876618e]
+  2017-03-23 00:37:01,745 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:37:01,746 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323006(String)
+  2017-03-23 00:37:01,752 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@613cf984]
+  2017-03-23 00:37:01,752 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 00:37:01,753 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323006(String), 20170323006(String), 57836(String), 5(Integer), 7(Integer), 8(Integer), 3(Integer), 6(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 00:37:01,758 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@20f3ebbe]
+  2017-03-23 00:37:01,758 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:37:01,759 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323005(String)
+  2017-03-23 00:37:01,763 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@38a4185]
+  2017-03-23 00:37:01,764 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:37:01,764 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323004(String)
+  2017-03-23 00:37:01,769 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5c89dc35]
+  2017-03-23 00:37:01,769 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:37:01,769 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323003(String)
+  2017-03-23 00:37:01,774 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@40ff9832]
+  2017-03-23 00:37:01,775 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:37:01,775 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323002(String)
+  2017-03-23 00:37:01,780 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3edf4c3b]
+  2017-03-23 00:37:01,780 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:37:01,780 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323001(String)
+  2017-03-23 00:37:01,785 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4f2bd7d]
+  2017-03-23 00:37:01,785 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:37:01,785 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322120(String)
+  2017-03-23 00:37:01,790 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a2d5701]
+  2017-03-23 00:37:01,791 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:37:01,791 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322119(String)
+  2017-03-23 00:37:01,796 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@48104497]
+  2017-03-23 00:37:01,797 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:37:01,797 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322118(String)
+  2017-03-23 00:37:01,802 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2b48ccfb]
+  2017-03-23 00:37:01,803 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:37:01,803 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322117(String)
+  2017-03-23 00:42:00,140 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@249eb5c5]
+  2017-03-23 00:42:00,142 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:42:00,142 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323007(String)
+  2017-03-23 00:42:00,150 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@1fea94dd]
+  2017-03-23 00:42:00,150 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 00:42:00,151 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323007(String), 20170323007(String), 65226(String), 6(Integer), 5(Integer), 2(Integer), 2(Integer), 6(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 00:42:00,159 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@8913073]
+  2017-03-23 00:42:00,159 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:42:00,160 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323006(String)
+  2017-03-23 00:42:00,168 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@17984c10]
+  2017-03-23 00:42:00,168 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:42:00,170 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323005(String)
+  2017-03-23 00:42:00,181 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a3316b9]
+  2017-03-23 00:42:00,181 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:42:00,182 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323004(String)
+  2017-03-23 00:42:00,186 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@22feb652]
+  2017-03-23 00:42:00,187 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:42:00,187 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323003(String)
+  2017-03-23 00:42:00,192 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3961490]
+  2017-03-23 00:42:00,193 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:42:00,193 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323002(String)
+  2017-03-23 00:42:00,201 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3c2d8fff]
+  2017-03-23 00:42:00,202 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:42:00,203 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323001(String)
+  2017-03-23 00:42:00,212 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@615c5abb]
+  2017-03-23 00:42:00,212 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:42:00,213 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322120(String)
+  2017-03-23 00:42:00,219 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3855502b]
+  2017-03-23 00:42:00,219 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:42:00,219 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322119(String)
+  2017-03-23 00:42:00,226 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@48d23945]
+  2017-03-23 00:42:00,226 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:42:00,227 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322118(String)
+  2017-03-23 00:47:00,577 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@62b4f903]
+  2017-03-23 00:47:00,577 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:47:00,577 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323008(String)
+  2017-03-23 00:47:00,582 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4e39f539]
+  2017-03-23 00:47:00,583 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 00:47:00,583 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323008(String), 20170323008(String), 76976(String), 7(Integer), 6(Integer), 9(Integer), 7(Integer), 6(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 00:47:00,589 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@758fad92]
+  2017-03-23 00:47:00,590 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:47:00,590 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323007(String)
+  2017-03-23 00:47:00,595 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@73aa6297]
+  2017-03-23 00:47:00,595 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:47:00,596 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323006(String)
+  2017-03-23 00:47:00,601 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6c3e52cf]
+  2017-03-23 00:47:00,601 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:47:00,601 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323005(String)
+  2017-03-23 00:47:00,606 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@72f59ce9]
+  2017-03-23 00:47:00,606 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:47:00,606 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323004(String)
+  2017-03-23 00:47:00,612 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@7c8401ef]
+  2017-03-23 00:47:00,612 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:47:00,612 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323003(String)
+  2017-03-23 00:47:00,619 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4a260bc7]
+  2017-03-23 00:47:00,619 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:47:00,620 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323002(String)
+  2017-03-23 00:47:00,633 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@714c8b66]
+  2017-03-23 00:47:00,633 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:47:00,634 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323001(String)
+  2017-03-23 00:47:00,643 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3cf39e25]
+  2017-03-23 00:47:00,643 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:47:00,644 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322120(String)
+  2017-03-23 00:47:00,650 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@584a8042]
+  2017-03-23 00:47:00,650 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:47:00,651 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322119(String)
+  2017-03-23 00:52:13,119 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@561a9629]
+  2017-03-23 00:52:13,120 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:52:13,121 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323009(String)
+  2017-03-23 00:52:13,127 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2ae84531]
+  2017-03-23 00:52:13,127 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 00:52:13,127 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323009(String), 20170323009(String), 18292(String), 1(Integer), 8(Integer), 2(Integer), 9(Integer), 2(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 00:52:13,133 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@78dbff0d]
+  2017-03-23 00:52:13,134 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:52:13,134 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323008(String)
+  2017-03-23 00:52:13,140 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@66adff4a]
+  2017-03-23 00:52:13,140 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:52:13,140 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323007(String)
+  2017-03-23 00:52:13,145 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6abab563]
+  2017-03-23 00:52:13,145 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:52:13,145 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323006(String)
+  2017-03-23 00:52:13,150 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5e72b9dc]
+  2017-03-23 00:52:13,150 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:52:13,150 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323005(String)
+  2017-03-23 00:52:13,156 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@39553dc8]
+  2017-03-23 00:52:13,156 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:52:13,156 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323004(String)
+  2017-03-23 00:52:13,162 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@40e482ec]
+  2017-03-23 00:52:13,162 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:52:13,163 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323003(String)
+  2017-03-23 00:52:13,173 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@71ec7ee6]
+  2017-03-23 00:52:13,173 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:52:13,174 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323002(String)
+  2017-03-23 00:52:13,179 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@361689c2]
+  2017-03-23 00:52:13,179 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:52:13,179 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323001(String)
+  2017-03-23 00:52:13,185 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4863b2c3]
+  2017-03-23 00:52:13,185 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:52:13,185 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170322120(String)
+  2017-03-23 00:57:00,111 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@421f1774]
+  2017-03-23 00:57:00,112 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:57:00,112 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323010(String)
+  2017-03-23 00:57:00,117 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@50a4fd70]
+  2017-03-23 00:57:00,117 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 00:57:00,118 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323010(String), 20170323010(String), 83980(String), 8(Integer), 3(Integer), 9(Integer), 8(Integer), 0(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 00:57:00,124 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@7135739c]
+  2017-03-23 00:57:00,124 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:57:00,125 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323009(String)
+  2017-03-23 00:57:00,130 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@115b83ed]
+  2017-03-23 00:57:00,130 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:57:00,130 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323008(String)
+  2017-03-23 00:57:00,136 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@48d556f7]
+  2017-03-23 00:57:00,136 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:57:00,137 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323007(String)
+  2017-03-23 00:57:00,141 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@21969ae9]
+  2017-03-23 00:57:00,142 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:57:00,142 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323006(String)
+  2017-03-23 00:57:00,148 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@422f3262]
+  2017-03-23 00:57:00,148 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:57:00,149 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323005(String)
+  2017-03-23 00:57:00,155 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a187a31]
+  2017-03-23 00:57:00,155 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:57:00,155 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323004(String)
+  2017-03-23 00:57:00,161 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3dd38c76]
+  2017-03-23 00:57:00,161 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:57:00,161 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323003(String)
+  2017-03-23 00:57:00,166 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@1921f440]
+  2017-03-23 00:57:00,167 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:57:00,167 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323002(String)
+  2017-03-23 00:57:00,172 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@668285db]
+  2017-03-23 00:57:00,172 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 00:57:00,172 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323001(String)
+  2017-03-23 01:02:00,094 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@1e0b29ec]
+  2017-03-23 01:02:00,094 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:02:00,095 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323011(String)
+  2017-03-23 01:02:00,100 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@749b2fcf]
+  2017-03-23 01:02:00,100 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 01:02:00,101 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323011(String), 20170323011(String), 37190(String), 3(Integer), 7(Integer), 1(Integer), 9(Integer), 0(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 01:02:00,107 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@43679ba1]
+  2017-03-23 01:02:00,107 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:02:00,108 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323010(String)
+  2017-03-23 01:02:00,114 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@27d8ab20]
+  2017-03-23 01:02:00,114 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:02:00,115 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323009(String)
+  2017-03-23 01:02:00,121 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@62229e23]
+  2017-03-23 01:02:00,121 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:02:00,121 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323008(String)
+  2017-03-23 01:02:00,126 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@74cb20f0]
+  2017-03-23 01:02:00,127 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:02:00,127 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323007(String)
+  2017-03-23 01:02:00,135 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5f76e70c]
+  2017-03-23 01:02:00,136 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:02:00,136 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323006(String)
+  2017-03-23 01:02:00,152 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@1d2b0079]
+  2017-03-23 01:02:00,153 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:02:00,153 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323005(String)
+  2017-03-23 01:02:00,164 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@51e88bb4]
+  2017-03-23 01:02:00,165 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:02:00,165 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323004(String)
+  2017-03-23 01:02:00,176 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6df562fe]
+  2017-03-23 01:02:00,177 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:02:00,177 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323003(String)
+  2017-03-23 01:02:00,184 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@159e1378]
+  2017-03-23 01:02:00,184 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:02:00,184 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323002(String)
+  2017-03-23 01:07:00,211 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2c773491]
+  2017-03-23 01:07:00,212 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:07:00,212 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323012(String)
+  2017-03-23 01:07:00,217 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@101a04d5]
+  2017-03-23 01:07:00,217 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 01:07:00,218 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323012(String), 20170323012(String), 37804(String), 3(Integer), 7(Integer), 8(Integer), 0(Integer), 4(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 01:07:00,223 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@766fb62c]
+  2017-03-23 01:07:00,223 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:07:00,223 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323011(String)
+  2017-03-23 01:07:00,228 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5d8da3ee]
+  2017-03-23 01:07:00,228 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:07:00,228 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323010(String)
+  2017-03-23 01:07:00,233 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@1d17bc5d]
+  2017-03-23 01:07:00,233 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:07:00,233 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323009(String)
+  2017-03-23 01:07:00,238 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3f2dab49]
+  2017-03-23 01:07:00,238 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:07:00,238 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323008(String)
+  2017-03-23 01:07:00,243 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@11327222]
+  2017-03-23 01:07:00,243 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:07:00,243 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323007(String)
+  2017-03-23 01:07:00,248 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@584b9b57]
+  2017-03-23 01:07:00,248 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:07:00,248 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323006(String)
+  2017-03-23 01:07:00,253 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@685194c3]
+  2017-03-23 01:07:00,253 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:07:00,253 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323005(String)
+  2017-03-23 01:07:00,258 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@63610faa]
+  2017-03-23 01:07:00,258 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:07:00,259 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323004(String)
+  2017-03-23 01:07:00,263 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@748f9ee1]
+  2017-03-23 01:07:00,263 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:07:00,264 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323003(String)
+  2017-03-23 01:12:00,211 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@10f83a5e]
+  2017-03-23 01:12:00,213 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:12:00,213 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323013(String)
+  2017-03-23 01:12:00,220 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5ca46683]
+  2017-03-23 01:12:00,220 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 01:12:00,221 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323013(String), 20170323013(String), 31061(String), 3(Integer), 1(Integer), 0(Integer), 6(Integer), 1(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 01:12:00,227 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@1baaedd8]
+  2017-03-23 01:12:00,228 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:12:00,228 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323012(String)
+  2017-03-23 01:12:00,234 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@121e6f46]
+  2017-03-23 01:12:00,235 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:12:00,235 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323011(String)
+  2017-03-23 01:12:00,240 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6f429e25]
+  2017-03-23 01:12:00,240 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:12:00,240 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323010(String)
+  2017-03-23 01:12:00,245 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2424bd18]
+  2017-03-23 01:12:00,245 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:12:00,245 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323009(String)
+  2017-03-23 01:12:00,250 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@510ab099]
+  2017-03-23 01:12:00,250 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:12:00,250 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323008(String)
+  2017-03-23 01:12:00,256 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@482afc50]
+  2017-03-23 01:12:00,257 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:12:00,257 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323007(String)
+  2017-03-23 01:12:00,263 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@14b9065e]
+  2017-03-23 01:12:00,263 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:12:00,264 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323006(String)
+  2017-03-23 01:12:00,270 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6bbe94d1]
+  2017-03-23 01:12:00,271 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:12:00,271 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323005(String)
+  2017-03-23 01:12:00,278 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6631ea12]
+  2017-03-23 01:12:00,278 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:12:00,279 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323004(String)
+  2017-03-23 01:17:00,219 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@17867858]
+  2017-03-23 01:17:00,220 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:17:00,221 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323014(String)
+  2017-03-23 01:17:00,225 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6dd7cd7a]
+  2017-03-23 01:17:00,225 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 01:17:00,226 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323014(String), 20170323014(String), 73672(String), 7(Integer), 3(Integer), 6(Integer), 7(Integer), 2(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 01:17:00,231 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4c105827]
+  2017-03-23 01:17:00,231 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:17:00,231 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323013(String)
+  2017-03-23 01:17:00,235 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@7fddeea2]
+  2017-03-23 01:17:00,236 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:17:00,236 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323012(String)
+  2017-03-23 01:17:00,240 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@392c4de5]
+  2017-03-23 01:17:00,240 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:17:00,241 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323011(String)
+  2017-03-23 01:17:00,245 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@1bbbb550]
+  2017-03-23 01:17:00,245 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:17:00,245 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323010(String)
+  2017-03-23 01:17:00,250 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@347c5b96]
+  2017-03-23 01:17:00,250 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:17:00,250 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323009(String)
+  2017-03-23 01:17:00,255 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@67de1b46]
+  2017-03-23 01:17:00,255 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:17:00,256 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323008(String)
+  2017-03-23 01:17:00,261 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@340d5387]
+  2017-03-23 01:17:00,261 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:17:00,261 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323007(String)
+  2017-03-23 01:17:00,266 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@1f8133fa]
+  2017-03-23 01:17:00,266 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:17:00,266 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323006(String)
+  2017-03-23 01:17:00,270 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@13ae1043]
+  2017-03-23 01:17:00,271 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:17:00,271 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323005(String)
+  2017-03-23 01:22:00,471 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2367e2d7]
+  2017-03-23 01:22:00,473 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:22:00,473 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323015(String)
+  2017-03-23 01:22:00,478 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@7865963a]
+  2017-03-23 01:22:00,478 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 01:22:00,479 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323015(String), 20170323015(String), 90615(String), 9(Integer), 0(Integer), 6(Integer), 1(Integer), 5(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 01:22:00,485 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@103a4c74]
+  2017-03-23 01:22:00,485 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:22:00,485 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323014(String)
+  2017-03-23 01:22:00,491 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@304a81a6]
+  2017-03-23 01:22:00,491 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:22:00,492 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323013(String)
+  2017-03-23 01:22:00,498 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4f45c300]
+  2017-03-23 01:22:00,498 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:22:00,498 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323012(String)
+  2017-03-23 01:22:00,503 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@152695c7]
+  2017-03-23 01:22:00,504 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:22:00,504 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323011(String)
+  2017-03-23 01:22:00,509 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@a0aecec]
+  2017-03-23 01:22:00,509 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:22:00,510 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323010(String)
+  2017-03-23 01:22:00,515 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3ec587fd]
+  2017-03-23 01:22:00,515 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:22:00,516 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323009(String)
+  2017-03-23 01:22:00,522 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3cb96b60]
+  2017-03-23 01:22:00,522 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:22:00,523 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323008(String)
+  2017-03-23 01:22:00,528 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6d17f8f9]
+  2017-03-23 01:22:00,528 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:22:00,528 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323007(String)
+  2017-03-23 01:22:00,533 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@496dd468]
+  2017-03-23 01:22:00,533 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:22:00,534 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323006(String)
+  2017-03-23 01:27:00,264 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2e83ce51]
+  2017-03-23 01:27:00,265 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:27:00,266 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323016(String)
+  2017-03-23 01:27:00,271 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@97ad210]
+  2017-03-23 01:27:00,272 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 01:27:00,272 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323016(String), 20170323016(String), 04520(String), 0(Integer), 4(Integer), 5(Integer), 2(Integer), 0(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 01:27:00,278 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@17143b7f]
+  2017-03-23 01:27:00,278 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:27:00,278 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323015(String)
+  2017-03-23 01:27:00,283 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@72d0b81c]
+  2017-03-23 01:27:00,284 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:27:00,284 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323014(String)
+  2017-03-23 01:27:00,291 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@788ddd20]
+  2017-03-23 01:27:00,291 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:27:00,291 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323013(String)
+  2017-03-23 01:27:00,298 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3093d87f]
+  2017-03-23 01:27:00,298 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:27:00,298 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323012(String)
+  2017-03-23 01:27:00,305 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2c2153d5]
+  2017-03-23 01:27:00,305 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:27:00,306 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323011(String)
+  2017-03-23 01:27:00,311 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@66d2e03a]
+  2017-03-23 01:27:00,312 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:27:00,312 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323010(String)
+  2017-03-23 01:27:00,318 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@753963cc]
+  2017-03-23 01:27:00,318 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:27:00,319 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323009(String)
+  2017-03-23 01:27:00,324 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@a1cf419]
+  2017-03-23 01:27:00,325 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:27:00,325 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323008(String)
+  2017-03-23 01:27:00,330 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@23a5f979]
+  2017-03-23 01:27:00,331 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:27:00,331 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323007(String)
+  2017-03-23 01:32:00,188 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@6b6cb539]
+  2017-03-23 01:32:00,189 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:32:00,190 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323017(String)
+  2017-03-23 01:32:00,194 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@7215f117]
+  2017-03-23 01:32:00,195 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 01:32:00,195 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323017(String), 20170323017(String), 81880(String), 8(Integer), 1(Integer), 8(Integer), 8(Integer), 0(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 01:32:00,199 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2bfe8898]
+  2017-03-23 01:32:00,200 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:32:00,200 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323016(String)
+  2017-03-23 01:32:00,204 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@11d4506a]
+  2017-03-23 01:32:00,204 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:32:00,205 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323015(String)
+  2017-03-23 01:32:00,209 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5e32c3b3]
+  2017-03-23 01:32:00,209 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:32:00,209 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323014(String)
+  2017-03-23 01:32:00,214 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@29c0b4b6]
+  2017-03-23 01:32:00,214 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:32:00,214 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323013(String)
+  2017-03-23 01:32:00,218 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@49702345]
+  2017-03-23 01:32:00,218 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:32:00,219 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323012(String)
+  2017-03-23 01:32:00,223 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@bb0afaf]
+  2017-03-23 01:32:00,223 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:32:00,223 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323011(String)
+  2017-03-23 01:32:00,228 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@31a774a2]
+  2017-03-23 01:32:00,228 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:32:00,228 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323010(String)
+  2017-03-23 01:32:00,233 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2cd81689]
+  2017-03-23 01:32:00,233 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:32:00,234 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323009(String)
+  2017-03-23 01:32:00,238 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@ee8ac29]
+  2017-03-23 01:32:00,238 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:32:00,239 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323008(String)
+  2017-03-23 01:37:00,225 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4cfa0eb4]
+  2017-03-23 01:37:00,226 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:37:00,226 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323018(String)
+  2017-03-23 01:37:00,231 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@38a8f508]
+  2017-03-23 01:37:00,231 DEBUG[java.sql.Connection:47] - ==>  Preparing: insert into cqssc_open_data (id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+  2017-03-23 01:37:00,232 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323018(String), 20170323018(String), 86625(String), 8(Integer), 6(Integer), 6(Integer), 2(Integer), 5(Integer), null, null, null, null, null, null, null, null, null, null, null
+  2017-03-23 01:37:00,236 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2f513c2d]
+  2017-03-23 01:37:00,236 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:37:00,237 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323017(String)
+  2017-03-23 01:37:00,241 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@75926695]
+  2017-03-23 01:37:00,241 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:37:00,241 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323016(String)
+  2017-03-23 01:37:00,246 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@72c30568]
+  2017-03-23 01:37:00,246 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:37:00,246 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323015(String)
+  2017-03-23 01:37:00,250 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3db93c26]
+  2017-03-23 01:37:00,250 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:37:00,250 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323014(String)
+  2017-03-23 01:37:00,255 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@44b10c90]
+  2017-03-23 01:37:00,255 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:37:00,256 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323013(String)
+  2017-03-23 01:37:00,261 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@53348688]
+  2017-03-23 01:37:00,261 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:37:00,261 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323012(String)
+  2017-03-23 01:37:00,267 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@c2d3adc]
+  2017-03-23 01:37:00,268 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:37:00,268 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323011(String)
+  2017-03-23 01:37:00,274 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5893c7f6]
+  2017-03-23 01:37:00,274 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:37:00,275 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323010(String)
+  2017-03-23 01:37:00,281 DEBUG[java.sql.Connection:47] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@7d04b50f]
+  2017-03-23 01:37:00,281 DEBUG[java.sql.Connection:47] - ==>  Preparing: select id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time from cqssc_open_data where id = ? 
+  2017-03-23 01:37:00,281 DEBUG[java.sql.PreparedStatement:47] - ==> Parameters: 20170323009(String)
+  

@@ -1,15 +1,19 @@
-package com.zrf.stock;
+package com.zrf.stock.controller;
+
+import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.zrf.stock.service.CqsscServiceI;
+
 @Controller
 @RequestMapping(value="/cqssc")
 public class CqsscController {
 	
-	@Autowired
+	@Resource
 	private CqsscServiceI service;
 	
 	@RequestMapping(value="/getCurrentNum", produces="text/html;charset=UTF-8")

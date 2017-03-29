@@ -3,13 +3,13 @@ package com.zrf.stock.dao;
 import com.zrf.stock.entity.CqsscData;
 
 public interface CqsscDataMapper {
-    int deleteByPrimaryKey(Integer ID);
+    int deleteByPrimaryKey(String ID);
 
     int insert(CqsscData record);
 
     int insertSelective(CqsscData record);
 
-    CqsscData selectByPrimaryKey(Integer ID);
+    CqsscData selectByPrimaryKey(String ID);
 
     int updateByPrimaryKeySelective(CqsscData record);
 
