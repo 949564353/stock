@@ -13,6 +13,9 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -30,11 +33,18 @@ public class HttpClientUtil {
 	@Resource
 	private CqsscServiceI service;
 	
-	public static String CQSSC_URL = "http://f.apiplus.cn/cqssc-10.json";
+	//http://t.apiplus.cn/newly.do?token=bf56ef2ad222836615d84281d5f9bd5f&code=cqssc&format=json
+	public static String CQSSC_URL = "http://a.apiplus.net/newly.do?token=2a2d75c8c792176f&code=cqssc&format=json";
+	public static String CQSSC_URL_DAY = "http://a.apiplus.net/daily.do?token=2a2d75c8c792176f&code=cqssc&format=json";	//&date=2017-05-14
 	
-	public void inertData() throws ParseException, IOException{
+	public static String beginDay = "2017-04-01";
+	public static String endDay = "2017-05-01";
+	
+	
+	//@Scheduled(cron = "0 0/5 * * * ?")  
+	public void insertData(String url) throws ParseException, IOException{
 		DefaultHttpClient client = new DefaultHttpClient();
-        HttpGet request = new HttpGet(HttpClientUtil.CQSSC_URL);
+        HttpGet request = new HttpGet(url);
         HttpResponse response = client.execute(request);
         if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
             /**读取服务器返回过来的json字符串数据**/
@@ -51,6 +61,7 @@ public class HttpClientUtil {
             //System.out.print("======");
             for(int i=0;i<dataArray.size();i++){
             	JsonObject object = dataArray.get(i).getAsJsonObject();
+            	System.out.println("&&&&&&&&&&&&&"+object.get("expect").getAsString());
             	CqsscData temp = service.selectByPrimaryKey(object.get("expect").getAsString());
             	if(temp==null){
             		CqsscData cell = new CqsscData();
@@ -77,17 +88,42 @@ public class HttpClientUtil {
 	
 	@Scheduled(cron = "0 2/10 10-22 * * ?")  
 	public void execute() throws ClientProtocolException, IOException{
-		inertData();
+		insertData(CQSSC_URL);
 	}
 	
 	@Scheduled(cron = "0 2/5 0,1,22,23 * * ?")  
 	public void execute2() throws ParseException, IOException{
-		inertData();
+		insertData(CQSSC_URL);
+	}
+	
+	@Scheduled(cron = "0 50 23 * * ?")   
+	public void executeDays() throws ParseException, IOException, InterruptedException{
+		executeDayData(HttpClientUtil.beginDay,HttpClientUtil.endDay);
+	}
+	
+	public void executeDayData(String beginDay,String endDay)throws ParseException, IOException, InterruptedException{
+		DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");  
+		DateTime beginTime = DateTime.parse(beginDay, formatter);
+		DateTime endTime = DateTime.parse(endDay, formatter);
+		String endNextDay = endTime.plusDays(1).toString(formatter);
+		String nextDay = beginTime.plusDays(1).toString(formatter);
+		do{
+			System.out.println("##########execute day:"+beginDay+" bgein");
+			String fullUrl = HttpClientUtil.CQSSC_URL_DAY+"&date="+beginDay;
+			System.out.println("^^^^^^^"+fullUrl);
+			insertData(fullUrl);
+			System.out.println("##########execute day:"+beginDay+" end");
+			beginDay = nextDay;
+			beginTime = beginTime.plusDays(1);
+			nextDay = beginTime.plusDays(1).toString(formatter);
+			Thread.sleep(10000);
+		}while(!beginDay.equals(endNextDay));
 	}
 	
 	
+	
+	
 	public static void main(String[] args) throws ClientProtocolException, IOException {
-		
 	}
 
 }
