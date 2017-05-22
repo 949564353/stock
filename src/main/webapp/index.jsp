@@ -5,20 +5,22 @@
 <script>
 	
 $(document).ready(function() {
-	alert("111");
 	$.ajax({
-		url : '/getCurrentDay.sc',// 跳转到 action
+		url : '/cqssc/getCurrentDay.sc',// 跳转到 action
 		data : {},
 		type : 'post',
 		cache : false,
 		async: false,
 		dataType : 'json',
 		success : function(result) {
-			 var json = eval("(" + result + ")");
-			 alert(json.num);
+			alert(result.length);
+			for(var i=0;i<result.length;i++){
+				alert(result[i].num+"---"+result[i].bsg);
+			}
 		}
 	});
-}
+	
+})
 </script>
 </head>
 <body>

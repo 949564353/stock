@@ -37,8 +37,8 @@ public class HttpClientUtil {
 	public static String CQSSC_URL = "http://a.apiplus.net/newly.do?token=2a2d75c8c792176f&code=cqssc&format=json";
 	public static String CQSSC_URL_DAY = "http://a.apiplus.net/daily.do?token=2a2d75c8c792176f&code=cqssc&format=json";	//&date=2017-05-14
 	
-	public static String beginDay = "2017-04-01";
-	public static String endDay = "2017-05-01";
+	public static String beginDay = "2017-05-15";
+	public static String endDay = "2017-05-22";
 	
 	
 	//@Scheduled(cron = "0 0/5 * * * ?")  
@@ -96,7 +96,7 @@ public class HttpClientUtil {
 		insertData(CQSSC_URL);
 	}
 	
-	@Scheduled(cron = "0 50 23 * * ?")   
+	@Scheduled(cron = "0 45 23 * * ?")   
 	public void executeDays() throws ParseException, IOException, InterruptedException{
 		executeDayData(HttpClientUtil.beginDay,HttpClientUtil.endDay);
 	}

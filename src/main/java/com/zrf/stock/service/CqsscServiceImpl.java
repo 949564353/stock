@@ -20,12 +20,10 @@ public class CqsscServiceImpl implements CqsscServiceI {
     public CqsscDataMapper cqsscMapper;  
 	 
 	@Override
-	public String getCurrentNum(){
-		CqsscData data = cqsscMapper.selectByPrimaryKey("");
-		
-		return "data";
+	public List<CqsscData> getCurrentNum(String currentDay){
+		List<CqsscData> data = cqsscMapper.selectCurrentDayNums(currentDay);
+		return data;
 	}
-	
 	@Override
 	public CqsscData selectByPrimaryKey(String key){
 		return cqsscMapper.selectByPrimaryKey(key);

@@ -1,8 +1,11 @@
 package com.zrf.stock.dao;
 
+import java.util.List;
+
 import com.zrf.stock.entity.CqsscData;
 
 public interface CqsscDataMapper {
+	List<CqsscData> selectCurrentDayNums(String ID);
     int deleteByPrimaryKey(String ID);
 
     int insert(CqsscData record);
