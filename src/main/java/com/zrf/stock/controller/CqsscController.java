@@ -29,11 +29,13 @@ public class CqsscController {
 	private String getCurrentNum(){
 		DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");  
         //时间解析    
-        String currentDay = DateTime.now().toString(format);
+        //String currentDay = DateTime.now().toString(format);
+        String currentDay = "20170531";
         List<CqsscData> list =  service.getCurrentNum(currentDay);
         JsonArray array = new JsonArray();
         for(CqsscData data:list){
     		JsonObject json = new JsonObject();
+    		json.addProperty("no", data.getNum());
     		json.addProperty("num", data.getNum());
     		json.addProperty("bsg", data.getIsBsg());
     		array.add(json);
