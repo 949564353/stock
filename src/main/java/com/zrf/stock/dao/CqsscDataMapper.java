@@ -6,6 +6,7 @@ import com.zrf.stock.entity.CqsscData;
 
 public interface CqsscDataMapper {
 	List<CqsscData> selectCurrentDayNums(String ID);
+	List<CqsscData> getBzList(String ID) ;
     int deleteByPrimaryKey(String ID);
 
     int insert(CqsscData record);

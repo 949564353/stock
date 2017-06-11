@@ -261,4 +261,13 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{ID,jdbcType=VARCHAR}
   </update>
+  
+   <select id="getBzList" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select a.day,b.is_wqb,b.is_wqs,b.is_wqg,b.is_wbs,b.is_wbg,b.is_wsg,b.is_qbs,b.is_qbg,b.is_qsg,b.is_bsg from cqssc_day a left join (select substr(day,1,8) day,sum(if(is_wqb=2,1,0)) is_wqb,sum(if(is_wqs=2,1,0)) is_wqs,sum(if(is_wqg=2,1,0)) is_wqg,
+		sum(if(is_wbs=2,1,0)) is_wbs,sum(if(is_wbg=2,1,0)) is_wbg,sum(if(is_wsg=2,1,0)) is_wsg,sum(if(is_qbs=2,1,0)) is_qbs,sum(if(is_qbg=2,1,0)) is_qbg,sum(if(is_qsg=2,1,0)) is_qsg,
+		sum(if(is_bsg=2,1,0)) is_bsg
+		from cqssc_open_data group by substr(day,1,8)) b
+		on a.day = b.day
+		order by a.day desc
+  </select>
 </mapper>

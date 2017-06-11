@@ -23,11 +23,15 @@
         <!-- 生成DAO的包名和位置 -->  
         <javaClientGenerator targetPackage="com.zrf.stock.dao" targetProject="stock/src/main/java" type="XMLMAPPER" />  
         <!-- 要生成的那些表(更改tableName 和domainObjectName 就可以了) -->  
-        <table schema="stock" tableName="CQSSC_OPEN_DATA" domainObjectName="CqsscData" enableCountByExample="false" enableUpdateByExample="false"  
+        <!-- <table schema="stock" tableName="CQSSC_OPEN_DATA" domainObjectName="CqsscData" enableCountByExample="false" enableUpdateByExample="false"  
             enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">  
             <columnOverride column="ID" property="ID" />  
             <columnOverride column="DAY" property="DAY" />  
             <columnOverride column="NUMBER" property="NUMBER" />  
+        </table>   -->
+        <table schema="stock" tableName="CQSSC_DAY" domainObjectName="CqsscDay" enableCountByExample="false" enableUpdateByExample="false"  
+            enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">  
+            <columnOverride column="DAY" property="DAY" />  
         </table>  
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名 -->  
         <!-- table tableName="CQSSC_OPEN_DATA" domainObjectName="CqsscData"  
