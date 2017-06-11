@@ -58,6 +58,48 @@ function requestData(){
                 valign: "middle"//垂直
             },
             {
+            	title: "中三",
+            	field: "isQbs",
+                width: "30px",
+                cellStyle : function cellStyle(value, row, index) {
+                	if(value>0)
+                		return {
+                			css : {
+                				"background-color" : "#87cefa"
+                			}
+                		};
+                	else
+                		return {
+                    		css : {
+                    		}
+                    	};
+                			
+                },
+                align: "center",//水平
+                valign: "middle"//垂直
+            },
+            {
+            	title: "后三",
+            	field: "isBsg",
+                width: "30px",
+                cellStyle : function cellStyle(value, row, index) {
+                	if(value>0)
+                		return {
+                			css : {
+                				"background-color" : "#87cefa"
+                			}
+                		};
+                	else
+                		return {
+                    		css : {
+                    		}
+                    	};
+                			
+                },
+                align: "center",//水平
+                valign: "middle"//垂直
+            },
+            {
             	title: "万千十",
             	field: "isWqs",
                 width: "30px",
@@ -163,27 +205,6 @@ function requestData(){
                 valign: "middle"//垂直
             },
             {
-            	title: "中三",
-            	field: "isQbs",
-                width: "30px",
-                cellStyle : function cellStyle(value, row, index) {
-                	if(value>0)
-                		return {
-                			css : {
-                				"background-color" : "#87cefa"
-                			}
-                		};
-                	else
-                		return {
-                    		css : {
-                    		}
-                    	};
-                			
-                },
-                align: "center",//水平
-                valign: "middle"//垂直
-            },
-            {
             	title: "千百个",
             	field: "isQbg",
                 width: "30px",
@@ -207,27 +228,6 @@ function requestData(){
             {
             	title: "千十个",
             	field: "isQsg",
-                width: "30px",
-                cellStyle : function cellStyle(value, row, index) {
-                	if(value>0)
-                		return {
-                			css : {
-                				"background-color" : "#87cefa"
-                			}
-                		};
-                	else
-                		return {
-                    		css : {
-                    		}
-                    	};
-                			
-                },
-                align: "center",//水平
-                valign: "middle"//垂直
-            },
-            {
-            	title: "后三",
-            	field: "isBsg",
                 width: "30px",
                 cellStyle : function cellStyle(value, row, index) {
                 	if(value>0)
