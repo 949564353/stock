@@ -37,8 +37,8 @@ public class HttpClientUtil {
 	public static String CQSSC_URL = "http://a.apiplus.net/newly.do?token=2a2d75c8c792176f&code=cqssc&format=json";
 	public static String CQSSC_URL_DAY = "http://a.apiplus.net/daily.do?token=2a2d75c8c792176f&code=cqssc&format=json";	//&date=2017-05-14
 	
-	public static String beginDay = "2017-05-25";
-	public static String endDay = "2017-05-31";
+	public static String beginDay = "2017-06-10";
+	public static String endDay = "2017-06-11";
 	
 	
 	//@Scheduled(cron = "0 0/5 * * * ?")  
@@ -74,16 +74,60 @@ public class HttpClientUtil {
                 	cell.setNumB(Integer.valueOf(opencode.split(",")[2]));
                 	cell.setNumS(Integer.valueOf(opencode.split(",")[3]));
                 	cell.setNumG(Integer.valueOf(opencode.split(",")[4]));
+                	fillOtherColumn(cell);
                 	service.save(cell);
             	}else{
             		System.out.println(object.get("expect").getAsString()+":"+object.get("opencode").getAsString()+";");
             	}
-            	//System.out.print(object.get("expect").getAsString()+":"+object.get("opencode").getAsString()+""+object.get("opentime").getAsString()+";");
             }
-            //System.out.println("=====");
         } else {
             System.out.println("未得到数据！");
         }
+	}
+	
+	
+	/**
+	 * 填充10路三星开奖号码类型
+	 * @param cell
+	 * @return
+	 */
+	public CqsscData fillOtherColumn(CqsscData cell){
+		Integer dataW = cell.getNumW();
+		Integer dataQ = cell.getNumQ();
+		Integer dataB = cell.getNumB();
+		Integer dataS = cell.getNumS();
+		Integer dataG = cell.getNumG();
+		
+		cell.setIsWqb(getType(dataW.intValue(),dataQ.intValue(),dataB.intValue()));   //前三
+		cell.setIsQbs(getType(dataQ.intValue(),dataB.intValue(),dataS.intValue()));   //中三
+		cell.setIsBsg(getType(dataB.intValue(),dataS.intValue(),dataG.intValue()));   //后三
+		cell.setIsWqs(getType(dataW.intValue(),dataQ.intValue(),dataS.intValue()));   //万千十
+		cell.setIsWqg(getType(dataW.intValue(),dataQ.intValue(),dataG.intValue()));   //万千个
+		cell.setIsWbs(getType(dataW.intValue(),dataB.intValue(),dataS.intValue()));   //万百十
+		cell.setIsWbg(getType(dataW.intValue(),dataB.intValue(),dataG.intValue()));   //万百个
+		cell.setIsWsg(getType(dataW.intValue(),dataS.intValue(),dataG.intValue()));   //万十个
+		cell.setIsQbg(getType(dataQ.intValue(),dataB.intValue(),dataG.intValue()));   //千百个
+		cell.setIsQsg(getType(dataQ.intValue(),dataS.intValue(),dataG.intValue()));   //千十个
+		
+		return cell;
+	}
+	
+	
+	/**
+	 * 获得三位开奖号码的类型  1：组三  2：豹子  0:组六
+	 * @param m1
+	 * @param m2
+	 * @param m3
+	 * @return
+	 */
+	public Integer getType(int m1,int m2,int m3){
+		Integer rtnInt = Integer.valueOf("0");
+		if(m1==m2 && m2==m3){
+			return Integer.valueOf("2");
+		}else if(m1==m2 || m1==m3 || m2==m3){
+			return Integer.valueOf("1");
+		}
+		return  rtnInt;
 	}
 	
 	@Scheduled(cron = "0 2/10 10-22 * * ?")  
@@ -96,7 +140,7 @@ public class HttpClientUtil {
 		insertData(CQSSC_URL);
 	}
 	
-	@Scheduled(cron = "0 23 23 * * ?")   
+	@Scheduled(cron = "0 53 14 * * ?")   
 	public void executeDays() throws ParseException, IOException, InterruptedException{
 		executeDayData(HttpClientUtil.beginDay,HttpClientUtil.endDay);
 	}
