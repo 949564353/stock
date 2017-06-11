@@ -81,6 +81,37 @@ public class CqsscController {
 		}
         return array.toString();
 	}
+	
+	
+	
+	@RequestMapping(value="/getBzList", produces="text/html;charset=UTF-8")
+	@ResponseBody
+	private String getBzList(HttpServletRequest request){
+		DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");  
+        //时间解析    
+        String currentDay = DateTime.now().toString(format);
+        List<CqsscData> list =  service.getBzList(currentDay);
+        JsonArray array = new JsonArray();
+        for(int i=0;i<list.size();i++){
+        	CqsscData data = list.get(i);
+    		JsonObject json = new JsonObject();
+    		if(Integer.valueOf(data.getDAY())<=Integer.valueOf(currentDay)){
+    			json.addProperty("day", data.getDAY());
+        		json.addProperty("isWqb", data.getIsWqb());
+        		json.addProperty("isWqs", data.getIsWqs());
+        		json.addProperty("isWqg", data.getIsWqg());
+        		json.addProperty("isWbs", data.getIsWbs());
+        		json.addProperty("isWbg", data.getIsWbg());
+        		json.addProperty("isWsg", data.getIsWsg());
+        		json.addProperty("isQbs", data.getIsQbs());
+        		json.addProperty("isQbg", data.getIsQbg());
+        		json.addProperty("isQsg", data.getIsQsg());
+        		json.addProperty("isBsg", data.getIsBsg());
+        		array.add(json);
+    		}
+        }
+        return array.toString();
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
