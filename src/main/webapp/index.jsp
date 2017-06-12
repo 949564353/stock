@@ -3,10 +3,8 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="js/bootstrap-table.css" />
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap/js/bootstrap.js"></script>
-<script type="text/javascript" src="js/bootstrap-table.js"></script> 
 <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
 
 <script>

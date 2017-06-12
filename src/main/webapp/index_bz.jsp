@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="js/bootstrap-table.css" />
+<link rel="stylesheet" type="text/css" href="js/bootstrap-table/bootstrap-table.css" />
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap/js/bootstrap.js"></script>
-<script type="text/javascript" src="js/bootstrap-table.js"></script> 
+<script type="text/javascript" src="js/bootstrap-table/bootstrap-table.js"></script> 
 <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
 
 <script>
@@ -16,19 +16,19 @@ $(document).ready(function() {
 })
 
 function requestData(){
-	
+	$('#bzTable').bootstrapTable('destroy');
 	$('#bzTable').bootstrapTable({
         url: "/cqssc/getBzList.sc",//数据源
-        dataField: "rows",//服务端返回数据键值 就是说记录放的键值是rows，分页时使用总记录数的键值为total
-        pagination: true,
+        toolbar: "#modalToolbar",	//启用顶部工具栏
+		//search: true,			//启用搜索框
+		//showRefresh: true, 		//启用刷新功能
+		//showExport: true,		//启用导出功能
+		//showToggle: true,		//启用2种表格视图切换
+		//showColumns: true,		//启用自定义列功能
         pageNumber: 1,
         pageSize: 15,
-        pageList: [10, 20, 30, 50],
-        sidePagination: "client",//服务端分页
-        contentType: "application/x-www-form-urlencoded",//请求数据内容格式 默认是 application/json 自己根据格式自行服务端处理
-        dataType: "json",//期待返回数据类型
-        method: "post",//请求方式
-        toolbar: "#toolbar",//指定工具栏
+		pagination: true,		//启用分页
+		pageList: "[8, 25, 50, 100, all]",
         columns: [
             {
                 title: "日期",
@@ -259,15 +259,16 @@ function requestData(){
 		margin-left:200px;
 		margin-right:200px;
 	}
-	
 </style>
 </head>
-<body >
+<body>
 	
 	<div align="center" id="day" style="font-size:24px;margin-top:20px">
 		重庆时时彩豹子开奖情况
 	</div>
-    <table id="bzTable"></table>
+	<div class="container">
+   	 	<table id="bzTable"></table>
+	</div>
 	
 </body>
 </html>
