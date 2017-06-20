@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
 <meta charset="utf-8">
@@ -18,7 +19,7 @@ $(document).ready(function() {
 function requestData(){
 	$('#bzTable').bootstrapTable('destroy');
 	$('#bzTable').bootstrapTable({
-        url: "/cqssc/getBzList.sc",//数据源
+        url: "cqssc/getBzList.sc",//数据源
         toolbar: "#modalToolbar",	//启用顶部工具栏
 		//search: true,			//启用搜索框
 		//showRefresh: true, 		//启用刷新功能

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
 <meta charset="utf-8">
@@ -16,8 +17,7 @@ $(document).ready(function() {
 function requestData(){
 	var selectDay = $("#selectDay").val();
 	$.ajax({
-		url : '/cqssc/getCurrentDay.sc',// 跳转到 action
-		data : {},
+		url : 'cqssc/getCurrentDay.sc',// 跳转到 action
 		type : 'post',
 		cache : false,
 		async: false,
@@ -31,10 +31,12 @@ function requestData(){
 				day = obj[0].day;
 	    		for(var i=0;i<obj.length;i++){
 	    			var typeStyle = obj[i].bsg;
-	    			if(obj[i].bsg=="组三"){
-	    				typeStyle = "<font color='red'>"+obj[i].bsg+"</font>";
-	    			}else if(obj[i].bsg=="豹子"){
-	    				typeStyle = "<font color='#0000FF'>"+obj[i].bsg+"</font>";
+	    			if(obj[i].bsg=="1"){
+	    				typeStyle = "<font color='red'>组三</font>";
+	    			}else if(obj[i].bsg=="2"){
+	    				typeStyle = "<font color='#0000FF'>豹子</font>";
+	    			}else if(obj[i].bsg=='0'){
+	    				typeStyle = "组六";
 	    			}
 	    			$("#"+obj[i].no).html("&nbsp;&nbsp;"+obj[i].no+"&nbsp;&nbsp;&nbsp;&nbsp;     "+obj[i].num+"&nbsp;&nbsp;&nbsp;&nbsp;     "+ typeStyle);
 	    		}

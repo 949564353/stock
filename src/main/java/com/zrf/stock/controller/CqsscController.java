@@ -26,7 +26,7 @@ public class CqsscController {
 	@Resource
 	private CqsscServiceI service;
 	
-	@RequestMapping(value="/getCurrentDay", produces="text/html;charset=UTF-8")
+	@RequestMapping(value="/getCurrentDay")
 	@ResponseBody
 	private String getCurrentNum(HttpServletRequest request){
 		String selectDay = request.getParameter("selectDay");
@@ -48,14 +48,14 @@ public class CqsscController {
     		Integer bsg = data.getIsBsg();
     		if(bsg!=null){
     			if(bsg.intValue()==1){
-    				json.addProperty("bsg", "组三");        		
+    				json.addProperty("bsg", "1");        		
     			}else if(bsg.intValue()==2){
-    				json.addProperty("bsg", "豹子");
+    				json.addProperty("bsg", "2");
     			}else{
-    				json.addProperty("bsg", "组六");
+    				json.addProperty("bsg", "0");
     			}
     		}else{
-    			json.addProperty("bsg", "组六");
+    			json.addProperty("bsg", "0");
     		}
     		
     		if(list.size()==i+1){
@@ -84,7 +84,7 @@ public class CqsscController {
 	
 	
 	
-	@RequestMapping(value="/getBzList", produces="text/html;charset=UTF-8")
+	@RequestMapping(value="/getBzList")
 	@ResponseBody
 	private String getBzList(HttpServletRequest request){
 		DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");  
