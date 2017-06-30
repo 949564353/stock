@@ -24,7 +24,11 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.zrf.stock.entity.CqsscData;
+import com.zrf.stock.entity.TjsscData;
+import com.zrf.stock.entity.XjsscData;
 import com.zrf.stock.service.CqsscServiceI;
+import com.zrf.stock.service.TjsscServiceI;
+import com.zrf.stock.service.XjsscServiceI;
 
 
 @SuppressWarnings("deprecation")
@@ -33,6 +37,10 @@ public class HttpClientUtil {
 	
 	@Resource
 	private CqsscServiceI service;
+	@Resource
+	private TjsscServiceI tjservice;
+	@Resource
+	private XjsscServiceI xjservice;
 	
 	public static String SSQ_TYPE_CQSSC = "cqssc";		//重庆时时彩
 	public static String SSQ_TYPE_TJSSC = "tjssc";		//天津时时彩
@@ -43,24 +51,26 @@ public class HttpClientUtil {
 	public static String SSC_URL_DAY = "http://a.apiplus.net/daily.do?token=2a2d75c8c792176f&format=json";	//&code=cqssc
 	
 	//插入开奖号码的开始与结束时时
-	public static String beginDay = "2017-06-18";
-	public static String endDay = "2017-06-19";
+	public static String beginDay = "2017-06-01";
+	public static String endDay = "2017-06-30";
 	
 	
 	
 	@Scheduled(cron = "0 2/10 10-22 * * ?")  
 	public void execute() throws ClientProtocolException, IOException{
-		insertData("cqssc",SSC_URL);		//重庆时时彩
+		//insertData("cqssc",SSC_URL);		//重庆时时彩
 	}
 	
 	@Scheduled(cron = "0 2/5 0,1,22,23 * * ?")  
 	public void execute2() throws ParseException, IOException{
-		insertData("cqssc",SSC_URL);		//重庆时时彩
+		//insertData("cqssc",SSC_URL);		//重庆时时彩
 	}
 	
-	@Scheduled(cron = "0 55 18 * * ?")   
+	@Scheduled(cron = "0 44 01 * * ?")   
 	public void executeDays() throws ParseException, IOException, InterruptedException{
-		executeDayData("cqssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//重庆时时彩
+		//executeDayData("cqssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//重庆时时彩
+		//executeDayData("tjssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//天津时时彩
+		executeDayData("xjssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//新疆时时彩
 	}
 	
 	
@@ -133,9 +143,9 @@ public class HttpClientUtil {
 		for(int i=0;i<dataArray.size();i++){
 			JsonObject object = dataArray.get(i).getAsJsonObject();
 			System.out.println("&&&&&&&&&&&&&"+object.get("expect").getAsString());
-			CqsscData temp = service.selectByPrimaryKey(object.get("expect").getAsString());
+			XjsscData temp = xjservice.selectByPrimaryKey(object.get("expect").getAsString());
 			if(temp==null){
-				CqsscData cell = new CqsscData();
+				XjsscData cell = new XjsscData();
 		    	cell.setID(object.get("expect").getAsString());
 		    	cell.setDAY(object.get("expect").getAsString());
 		    	String opencode = object.get("opencode").getAsString();
@@ -145,8 +155,8 @@ public class HttpClientUtil {
 		    	cell.setNumB(Integer.valueOf(opencode.split(",")[2]));
 		    	cell.setNumS(Integer.valueOf(opencode.split(",")[3]));
 		    	cell.setNumG(Integer.valueOf(opencode.split(",")[4]));
-		    	fillCqsscOtherColumn(cell);
-		    	service.save(cell);
+		    	fillXjsscOtherColumn(cell);
+		    	xjservice.save(cell);
 			}else{
 				System.out.println(object.get("expect").getAsString()+":"+object.get("opencode").getAsString()+";");
 			}
@@ -162,9 +172,9 @@ public class HttpClientUtil {
 		for(int i=0;i<dataArray.size();i++){
 			JsonObject object = dataArray.get(i).getAsJsonObject();
 			System.out.println("&&&&&&&&&&&&&"+object.get("expect").getAsString());
-			CqsscData temp = service.selectByPrimaryKey(object.get("expect").getAsString());
+			TjsscData temp = tjservice.selectByPrimaryKey(object.get("expect").getAsString());
 			if(temp==null){
-				CqsscData cell = new CqsscData();
+				TjsscData cell = new TjsscData();
 		    	cell.setID(object.get("expect").getAsString());
 		    	cell.setDAY(object.get("expect").getAsString());
 		    	String opencode = object.get("opencode").getAsString();
@@ -174,8 +184,8 @@ public class HttpClientUtil {
 		    	cell.setNumB(Integer.valueOf(opencode.split(",")[2]));
 		    	cell.setNumS(Integer.valueOf(opencode.split(",")[3]));
 		    	cell.setNumG(Integer.valueOf(opencode.split(",")[4]));
-		    	fillCqsscOtherColumn(cell);
-		    	service.save(cell);
+		    	fillTjsscOtherColumn(cell);
+		    	tjservice.save(cell);
 			}else{
 				System.out.println(object.get("expect").getAsString()+":"+object.get("opencode").getAsString()+";");
 			}
@@ -215,7 +225,7 @@ public class HttpClientUtil {
 	 * @param cell
 	 * @return
 	 */
-	public CqsscData fillTjsscOtherColumn(CqsscData cell){
+	public TjsscData fillTjsscOtherColumn(TjsscData cell){
 		Integer dataW = cell.getNumW();
 		Integer dataQ = cell.getNumQ();
 		Integer dataB = cell.getNumB();
@@ -242,7 +252,7 @@ public class HttpClientUtil {
 	 * @param cell
 	 * @return
 	 */
-	public CqsscData fillXjsscOtherColumn(CqsscData cell){
+	public XjsscData fillXjsscOtherColumn(XjsscData cell){
 		Integer dataW = cell.getNumW();
 		Integer dataQ = cell.getNumQ();
 		Integer dataB = cell.getNumB();
