@@ -32,7 +32,7 @@ import com.zrf.stock.service.XjsscServiceI;
 
 
 @SuppressWarnings("deprecation")
-@Component
+@Component 
 public class HttpClientUtil {
 	
 	@Resource
@@ -40,7 +40,7 @@ public class HttpClientUtil {
 	@Resource
 	private TjsscServiceI tjservice;
 	@Resource
-	private XjsscServiceI xjservice;
+	private XjsscServiceI xjservice; 
 	
 	public static String SSQ_TYPE_CQSSC = "cqssc";		//重庆时时彩
 	public static String SSQ_TYPE_TJSSC = "tjssc";		//天津时时彩
@@ -51,25 +51,46 @@ public class HttpClientUtil {
 	public static String SSC_URL_DAY = "http://a.apiplus.net/daily.do?token=2a2d75c8c792176f&format=json";	//&code=cqssc
 	
 	//插入开奖号码的开始与结束时时
-	public static String beginDay = "2017-06-01";
-	public static String endDay = "2017-06-30";
+	public static String beginDay = "2017-04-01";
+	public static String endDay = "2017-07-03";
 	
 	
 	
 	@Scheduled(cron = "0 2/10 10-22 * * ?")  
 	public void execute() throws ClientProtocolException, IOException{
-		//insertData("cqssc",SSC_URL);		//重庆时时彩
+		insertData("cqssc",SSC_URL);		//重庆时时彩
 	}
 	
 	@Scheduled(cron = "0 2/5 0,1,22,23 * * ?")  
 	public void execute2() throws ParseException, IOException{
-		//insertData("cqssc",SSC_URL);		//重庆时时彩
+		insertData("cqssc",SSC_URL);		//重庆时时彩
 	}
 	
-	@Scheduled(cron = "0 44 01 * * ?")   
+	
+	@Scheduled(cron = "0 2/10 09-22 * * ?")  
+	public void executetj() throws ClientProtocolException, IOException{
+		insertData("tjssc",SSC_URL);		//天津时时彩
+	}
+	
+	
+	@Scheduled(cron = "0 2/10 10-23,23,0,1 * * ?")  
+	public void executexj() throws ClientProtocolException, IOException{
+		insertData("xjssc",SSC_URL);		//新疆时时彩
+	}
+	
+	
+	@Scheduled(cron = "0 45 10 * * ?")   
 	public void executeDays() throws ParseException, IOException, InterruptedException{
-		//executeDayData("cqssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//重庆时时彩
-		//executeDayData("tjssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//天津时时彩
+		executeDayData("cqssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//重庆时时彩
+	}
+	
+	@Scheduled(cron = "0 45 10 * * ?")   
+	public void executetjDays() throws ParseException, IOException, InterruptedException{
+		executeDayData("tjssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//天津时时彩
+	}
+	
+	@Scheduled(cron = "0 45 10 * * ?")   
+	public void executexjDays() throws ParseException, IOException, InterruptedException{
 		executeDayData("xjssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//新疆时时彩
 	}
 	
