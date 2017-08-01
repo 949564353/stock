@@ -23,7 +23,7 @@ function initWebSocket(){
  
     webSocket.onopen = function(event) {
       onOpen(event)
-    };
+    }; 
  
     webSocket.onmessage = function(event) {
       onMessage(event)

@@ -170,7 +170,7 @@ public class WebSocketController {
 			DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");  
 	        //时间解析    
 	        selectDay = DateTime.now().toString(format);
-		}
+		}  
         //String currentDay = "20170531";
         List<CqsscData> list =  service.getCurrentNum(selectDay);
         JsonArray array = new JsonArray();
