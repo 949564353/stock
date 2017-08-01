@@ -20,11 +20,13 @@
     <result column="is_bsg" jdbcType="INTEGER" property="isBsg" />
     <result column="is_wsg" jdbcType="INTEGER" property="isWsg" />
     <result column="is_qsg" jdbcType="INTEGER" property="isQsg" />
+    <result column="bsg_type" jdbcType="INTEGER" property="bsgType" />
+    <result column="wx_type" jdbcType="INTEGER" property="wxType" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
     id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, 
-    is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, create_time
+    is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, bsg_type, wx_type, create_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -48,14 +50,15 @@
       num_g, is_wqb, is_wqs, 
       is_wqg, is_wbs, is_wbg, 
       is_qbs, is_qbg, is_bsg, 
-      is_wsg, is_qsg, create_time
+      is_wsg, is_qsg, bsg_type, wx_type, create_time
       )
     values (#{ID,jdbcType=VARCHAR}, #{DAY,jdbcType=VARCHAR}, #{num,jdbcType=VARCHAR}, 
       #{numW,jdbcType=INTEGER}, #{numQ,jdbcType=INTEGER}, #{numB,jdbcType=INTEGER}, #{numS,jdbcType=INTEGER}, 
       #{numG,jdbcType=INTEGER}, #{isWqb,jdbcType=INTEGER}, #{isWqs,jdbcType=INTEGER}, 
       #{isWqg,jdbcType=INTEGER}, #{isWbs,jdbcType=INTEGER}, #{isWbg,jdbcType=INTEGER}, 
       #{isQbs,jdbcType=INTEGER}, #{isQbg,jdbcType=INTEGER}, #{isBsg,jdbcType=INTEGER}, 
-      #{isWsg,jdbcType=INTEGER}, #{isQsg,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
+      #{isWsg,jdbcType=INTEGER}, #{isQsg,jdbcType=INTEGER}, #{bsgType,jdbcType=INTEGER},
+      #{wxType,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.zrf.stock.entity.CqsscData">
@@ -233,6 +236,12 @@
       <if test="isQsg != null">
         is_qsg = #{isQsg,jdbcType=INTEGER},
       </if>
+      <if test="bsgType != null">
+        bsg_type = #{bsgType,jdbcType=INTEGER},
+      </if>
+      <if test="wxType != null">
+        wx_type = #{wxType,jdbcType=INTEGER},
+      </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -258,6 +267,8 @@
       is_bsg = #{isBsg,jdbcType=INTEGER},
       is_wsg = #{isWsg,jdbcType=INTEGER},
       is_qsg = #{isQsg,jdbcType=INTEGER},
+      bsg_type = #{bsgType,jdbcType=INTEGER},
+      wx_type = #{wxType,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{ID,jdbcType=VARCHAR}
   </update>

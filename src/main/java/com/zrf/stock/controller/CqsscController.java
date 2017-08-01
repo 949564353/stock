@@ -35,7 +35,6 @@ public class CqsscController {
 	        //时间解析    
 	        selectDay = DateTime.now().toString(format);
 		}
-        //String currentDay = "20170531";
         List<CqsscData> list =  service.getCurrentNum(selectDay);
         JsonArray array = new JsonArray();
         String lastNo = "";
@@ -46,6 +45,8 @@ public class CqsscController {
     		json.addProperty("no", data.getDAY().substring(8, 11));
     		json.addProperty("num", data.getNum());
     		Integer bsg = data.getIsBsg();
+    		Integer bsgType = data.getBsgType();
+    		Integer wxType = data.getWxType();
     		if(bsg!=null){
     			if(bsg.intValue()==1){
     				json.addProperty("bsg", "1");        		
@@ -56,6 +57,17 @@ public class CqsscController {
     			}
     		}else{
     			json.addProperty("bsg", "0");
+    		}
+    		if(bsgType!=null){
+    			json.addProperty("bsgType", bsgType);
+    		}else{
+    			json.addProperty("bsgType", "0");
+    		}
+    		
+    		if(wxType!=null){
+        		json.addProperty("wxType", wxType.toString());
+    		}else{
+        		json.addProperty("wxType", "0");
     		}
     		
     		if(list.size()==i+1){
@@ -77,6 +89,8 @@ public class CqsscController {
 			json.addProperty("day", selectDay);
     		json.addProperty("num", "      ");
     		json.addProperty("bsg", "    ");
+    		json.addProperty("bsgType", "    ");
+    		json.addProperty("wxType", "    ");
     		array.add(json);
 		}
         return array.toString();

@@ -3,6 +3,11 @@ package com.zrf.stock.util;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -32,7 +37,7 @@ import com.zrf.stock.service.XjsscServiceI;
 
 
 @SuppressWarnings("deprecation")
-@Component
+@Component 
 public class HttpClientUtil {
 	
 	@Resource
@@ -40,7 +45,7 @@ public class HttpClientUtil {
 	@Resource
 	private TjsscServiceI tjservice;
 	@Resource
-	private XjsscServiceI xjservice;
+	private XjsscServiceI xjservice; 
 	
 	public static String SSQ_TYPE_CQSSC = "cqssc";		//重庆时时彩
 	public static String SSQ_TYPE_TJSSC = "tjssc";		//天津时时彩
@@ -51,25 +56,50 @@ public class HttpClientUtil {
 	public static String SSC_URL_DAY = "http://a.apiplus.net/daily.do?token=2a2d75c8c792176f&format=json";	//&code=cqssc
 	
 	//插入开奖号码的开始与结束时时
-	public static String beginDay = "2017-06-01";
-	public static String endDay = "2017-06-30";
+	public static String beginDay = "2017-01-01";
+	public static String endDay = "2017-07-24";
 	
 	
 	
 	@Scheduled(cron = "0 2/10 10-22 * * ?")  
 	public void execute() throws ClientProtocolException, IOException{
-		//insertData("cqssc",SSC_URL);		//重庆时时彩
+		insertData("cqssc",SSC_URL);		//重庆时时彩
 	}
 	
 	@Scheduled(cron = "0 2/5 0,1,22,23 * * ?")  
 	public void execute2() throws ParseException, IOException{
-		//insertData("cqssc",SSC_URL);		//重庆时时彩
+		insertData("cqssc",SSC_URL);		//重庆时时彩
 	}
 	
-	@Scheduled(cron = "0 44 01 * * ?")   
+	
+	@Scheduled(cron = "0 3/10 09-22 * * ?")  
+	public void executetj() throws ClientProtocolException, IOException{
+		insertData("tjssc",SSC_URL);		//天津时时彩
+	}
+	
+	
+	@Scheduled(cron = "0 3/10 10-23,23,0,1 * * ?")  
+	public void executexj() throws ClientProtocolException, IOException{
+		insertData("xjssc",SSC_URL);		//新疆时时彩
+	}
+	
+	
+	@Scheduled(cron = "0 25 13 * * ?")   
 	public void executeDays() throws ParseException, IOException, InterruptedException{
-		//executeDayData("cqssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//重庆时时彩
-		//executeDayData("tjssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//天津时时彩
+		try{
+			executeDayData("cqssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//重庆时时彩
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	//@Scheduled(cron = "0 45 10 * * ?")   
+	public void executetjDays() throws ParseException, IOException, InterruptedException{
+		executeDayData("tjssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//天津时时彩
+	}
+	
+	//@Scheduled(cron = "0 45 10 * * ?")   
+	public void executexjDays() throws ParseException, IOException, InterruptedException{
 		executeDayData("xjssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//新疆时时彩
 	}
 	
@@ -215,7 +245,9 @@ public class HttpClientUtil {
 		cell.setIsWsg(getType(dataW.intValue(),dataS.intValue(),dataG.intValue()));   //万十个
 		cell.setIsQbg(getType(dataQ.intValue(),dataB.intValue(),dataG.intValue()));   //千百个
 		cell.setIsQsg(getType(dataQ.intValue(),dataS.intValue(),dataG.intValue()));   //千十个
-		
+		cell.setBsgType(is012(dataB.intValue(),dataS.intValue(),dataG.intValue()));   //后三012路
+		int []wxdata = {dataW.intValue(),dataQ.intValue(),dataB.intValue(),dataS.intValue(),dataG.intValue()};	
+		cell.setWxType(getWxType(wxdata));		//五星类型
 		return cell;
 	}
 	
@@ -275,21 +307,81 @@ public class HttpClientUtil {
 	
 	
 	/**
-	 * 获得三位开奖号码的类型  1：组三  2：豹子  0:组六
+	 * 获得三位开奖号码的类型  1：组三  2：豹子  0:组六	
 	 * @param m1
 	 * @param m2
 	 * @param m3
 	 * @return
 	 */
-	public Integer getType(int m1,int m2,int m3){
-		Integer rtnInt = Integer.valueOf("0");
+	public static Integer getType(int m1,int m2,int m3){
+		Integer rtnInt = Integer.valueOf("0");		//组六
 		if(m1==m2 && m2==m3){
-			return Integer.valueOf("2");
+			return Integer.valueOf("2");		//豹子
 		}else if(m1==m2 || m1==m3 || m2==m3){
+			return Integer.valueOf("1");		//组三
+		}
+		return  rtnInt;
+	}
+	
+	/**
+	 * 是否是012路	
+	 * @param m1
+	 * @param m2
+	 * @param m3
+	 * @return
+	 */
+	public static Integer is012(int m1,int m2,int m3){
+		int type = getType(m1,m2,m3).intValue();
+		Integer rtnInt = Integer.valueOf("0");		//非012路
+		if(type==0 && ((m1%3!=m2%3 && m1%3!=m3%3 && m2%3!=m3%3) && !((m1<5 && m2<5 && m3<5)||(m1>4 && m2>4 && m3>4)))){
 			return Integer.valueOf("1");
 		}
 		return  rtnInt;
 	}
+	
+	/**
+	 * 得到五星类型 0：其它	1：组选30；2：组选20；3：组选10 4：組選5
+	 * @param m1
+	 * @param m2
+	 * @param m3
+	 * @param m4
+	 * @param m5
+	 * @return
+	 */
+	public static Integer getWxType(int[] m){
+		Integer rtnInt = Integer.valueOf("0");		
+		Map<String,String> map = new HashMap();
+		for(int i=0;i<m.length;i++){
+			if(map.containsKey(m[i]+"")){
+				String newValue = String.valueOf(Integer.valueOf(map.get(m[i]+"")).intValue()+1);
+				map.put(m[i]+"", newValue);
+			}else{
+				map.put(m[i]+"", "1");
+			}
+		}
+		int length = map.size();
+		if(length==2){
+			rtnInt = Integer.valueOf("3");
+			for(Entry entry:map.entrySet()){
+				if("4".equals(entry.getValue().toString())){
+					rtnInt = Integer.valueOf("4"); 
+					break;
+				}
+			}
+		}else if(length==3){
+			rtnInt = Integer.valueOf("1");
+			for(Entry entry:map.entrySet()){
+				if("3".equals(entry.getValue().toString())){
+					rtnInt = Integer.valueOf("2"); 
+					break;
+				}
+			}
+		}
+		return  rtnInt;
+	}
+	
+	
+	
 
 	
 	public void executeDayData(String sscType,String beginDay,String endDay)throws ParseException, IOException, InterruptedException{
@@ -314,6 +406,8 @@ public class HttpClientUtil {
 	
 	
 	public static void main(String[] args) throws ClientProtocolException, IOException {
+		int[] a = {1,2,2,2,1};
+		System.out.println(is012(8,7,6));
 	}
 
 }

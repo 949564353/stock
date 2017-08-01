@@ -38,6 +38,10 @@ public class CqsscData {
     private Integer isWsg;
 
     private Integer isQsg;
+    
+    private Integer bsgType;
+    
+    private Integer wxType;
 
     private Date createTime;
 
@@ -192,4 +196,21 @@ public class CqsscData {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+	public Integer getBsgType() {
+		return bsgType;
+	}
+
+	public void setBsgType(Integer bsgType) {
+		this.bsgType = bsgType;
+	}
+
+	public Integer getWxType() {
+		return wxType;
+	}
+
+	public void setWxType(Integer wxType) {
+		this.wxType = wxType;
+	}
+    
 }
