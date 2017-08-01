@@ -11,8 +11,45 @@
 <script>
 	
 $(document).ready(function() {
-	requestData();
+	initWebSocket();
 })
+
+
+function initWebSocket(){
+	webSocket = new WebSocket('ws://localhost:8888/websocketTest');
+	webSocket.onerror = function(event) {
+      onError(event)
+    };
+ 
+    webSocket.onopen = function(event) {
+      onOpen(event)
+    };
+ 
+    webSocket.onmessage = function(event) {
+      onMessage(event)
+    };
+ 
+    function onMessage(event) {
+      //document.getElementById('msg').innerHTML = event.data;
+      displayData(event.data);
+    }
+ 
+    function onOpen(event) {
+      document.getElementById('msg').innerHTML
+        = 'Connection established';
+    }
+ 
+    function onError(event) {
+      alert(event.data);
+    }
+    function start() {
+        webSocket.send('hello');
+        return false;
+    }
+}
+
+	
+    
 
 function requestData(){
 	var selectDay = $("#selectDay").val();
@@ -47,9 +84,31 @@ function requestData(){
 }
 
 
+function displayData(obj){
+	var day;
+	if(obj!=null && obj.length>0){
+		day = obj[0].day;
+		for(var i=0;i<obj.length;i++){
+			var typeStyle = obj[i].bsg;
+			if(obj[i].bsg=="1"){
+				typeStyle = "<font color='red'>组三</font>";
+			}else if(obj[i].bsg=="2"){
+				typeStyle = "<font color='#0000FF'>豹子</font>";
+			}else if(obj[i].bsg=='0'){
+				typeStyle = "组六";
+			}
+			$("#"+obj[i].no).html("&nbsp;&nbsp;"+obj[i].no+"&nbsp;&nbsp;&nbsp;&nbsp;     "+obj[i].num+"&nbsp;&nbsp;&nbsp;&nbsp;     "+ typeStyle);
+		}
+	}
+	$("#selectDay").text(day);
+}
+
+
 function showData(dp){
 	$("#selectDay").val(dp.cal.getDateStr());
-	requestData();
+	//webSocket.onOpen();
+	webSocket.send(dp.cal.getDateStr());
+	//requestData();
 }
 
 
@@ -71,7 +130,7 @@ div{
 <body>
 	
 	<div align="center" id="day" style="font-size:24px">
-		重庆时时彩
+		<span id="msg"></span>重庆时时彩
 		<font color='red'>
 			<span id="selectDay"></span> 
 		</font>
