@@ -3,6 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>重庆时时彩——当天</title>
 	<link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap.css" />
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/dateformat-min.js"></script>
@@ -10,7 +11,6 @@
 	<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
 
 	<script>
-
         Date.prototype.format = function(format)
         {
             var o = {
@@ -38,9 +38,7 @@
         function requestData(){
             var selectDay = $("#selectDay").val();
             getResultData(selectDay);
-
         }
-
 
         function getResultData(selectDay){
             $.ajax({
@@ -57,25 +55,21 @@
                     if(obj!=null && obj.length>0){
                         day = obj[0].day;
                         for(var i=0;i<obj.length;i++){
-                            var typeStyle = obj[i].wxType;
-                            if(obj[i].wxType=="1"){
-                                typeStyle = "<font color='red'>组30</font>";
-                            }else if(obj[i].wxType=="2"){
-                                typeStyle = "<font color='#0000FF'>组20</font>";
-                            }else if(obj[i].wxType=="3"){
-                                typeStyle = "<font color='#0000FF'>组10</font>";
-                            }else if(obj[i].wxType=="4"){
-                                typeStyle = "<font color='#0000FF'>组5</font>";
-                            }else if(obj[i].wxType=='0'){
-                                typeStyle = "其它";
+                            var typeStyle = obj[i].bsg;
+                            if(obj[i].bsg=="1"){
+                                typeStyle = "<font color='red'>组三</font>";
+                            }else if(obj[i].bsg=="2"){
+                                typeStyle = "<font color='#0000FF'>豹子</font>";
+                            }else if(obj[i].bsg=='0'){
+                                typeStyle = "组六";
                             }
-                            $("#"+obj[i].no).html("&nbsp;&nbsp;"+obj[i].no+"&nbsp;&nbsp;&nbsp;&nbsp;     "+obj[i].num+"&nbsp;&nbsp;     "+ typeStyle);
+                            $("#"+obj[i].no).html("&nbsp;&nbsp;"+obj[i].no+"&nbsp;&nbsp;&nbsp;&nbsp;     "+obj[i].num+"&nbsp;&nbsp;&nbsp;&nbsp;     "+ typeStyle);
                         }
                     }
                     $("#selectDay").text(day);
                 }
             });
-        }
+		}
 
 
         function showData(dp){
@@ -102,6 +96,7 @@
             getResultData(nextDateStr);
         }
 
+
 	</script>
 	<style type="text/css">
 		td {
@@ -120,7 +115,7 @@
 <body>
 
 <div align="center" id="day" style="font-size:24px">
-	重庆时时彩(五星)
+	重庆时时彩
 	<a href="javascript:beforeDay()">⇦</a>
 	<font color='red'>
 		<span id="selectDay"></span>

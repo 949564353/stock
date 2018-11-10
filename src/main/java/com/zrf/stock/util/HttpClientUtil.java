@@ -61,30 +61,30 @@ public class HttpClientUtil {
 	
 	
 	
-	@Scheduled(cron = "0 2/10 10-22 * * ?")  
+//	@Scheduled(cron = "0 2/10 10-22 * * ?")
 	public void execute() throws ClientProtocolException, IOException{
 		insertData("cqssc",SSC_URL);		//重庆时时彩
 	}
 	
-	@Scheduled(cron = "0 2/5 0,1,22,23 * * ?")  
+//	@Scheduled(cron = "0 2/5 0,1,22,23 * * ?")
 	public void execute2() throws ParseException, IOException{
 		insertData("cqssc",SSC_URL);		//重庆时时彩
 	}
 	
 	
-	@Scheduled(cron = "0 3/10 09-22 * * ?")  
+//	@Scheduled(cron = "0 3/10 09-22 * * ?")
 	public void executetj() throws ClientProtocolException, IOException{
 		insertData("tjssc",SSC_URL);		//天津时时彩
 	}
 	
 	
-	@Scheduled(cron = "0 3/10 10-23,23,0,1 * * ?")  
+//	@Scheduled(cron = "0 3/10 10-23,23,0,1 * * ?")
 	public void executexj() throws ClientProtocolException, IOException{
 		insertData("xjssc",SSC_URL);		//新疆时时彩
 	}
 	
 	
-	@Scheduled(cron = "0 25 13 * * ?")   
+//	@Scheduled(cron = "0 25 13 * * ?")
 	public void executeDays() throws ParseException, IOException, InterruptedException{
 		try{
 			executeDayData("cqssc",HttpClientUtil.beginDay,HttpClientUtil.endDay);		//重庆时时彩

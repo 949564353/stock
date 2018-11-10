@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
   
   <properties>  
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>  
         <spring.version>3.2.9.RELEASE</spring.version>  
         <mybatis.version>3.1.1</mybatis.version>  
@@ -154,7 +154,16 @@
         
     </dependencies>  
   
-    <build>  
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
 			<!-- jetty插件 -->
 			<plugin>
@@ -177,16 +186,15 @@
                 <artifactId>maven-compiler-plugin</artifactId>  
                 <version>2.3.2</version>  
                 <configuration>  
-                    <source>1.7</source>  
-                    <target>1.7</target>  
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>  
             </plugin>  
             <plugin>  
                 <artifactId>maven-war-plugin</artifactId>  
                 <version>2.2</version>  
                 <configuration>  
-                    <version>3.0</version>  
-                    <failOnMissingWebXml>false</failOnMissingWebXml>  
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>  
             </plugin>  
         </plugins>  

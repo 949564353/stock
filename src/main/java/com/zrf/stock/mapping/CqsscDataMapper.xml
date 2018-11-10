@@ -25,17 +25,17 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs, 
+    id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs,
     is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, bsg_type, wx_type, create_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from cqssc_open_data
     where id = #{ID,jdbcType=VARCHAR}
   </select>
   <select id="selectCurrentDayNums" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from cqssc_open_data
     where day like "%"#{ID}"%"
@@ -45,18 +45,18 @@
     where id = #{ID,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.zrf.stock.entity.CqsscData">
-    insert into cqssc_open_data (id, day, num, 
-      num_w, num_q, num_b, num_s, 
-      num_g, is_wqb, is_wqs, 
-      is_wqg, is_wbs, is_wbg, 
-      is_qbs, is_qbg, is_bsg, 
+    insert into cqssc_open_data (id, day, num,
+      num_w, num_q, num_b, num_s,
+      num_g, is_wqb, is_wqs,
+      is_wqg, is_wbs, is_wbg,
+      is_qbs, is_qbg, is_bsg,
       is_wsg, is_qsg, bsg_type, wx_type, create_time
       )
-    values (#{ID,jdbcType=VARCHAR}, #{DAY,jdbcType=VARCHAR}, #{num,jdbcType=VARCHAR}, 
-      #{numW,jdbcType=INTEGER}, #{numQ,jdbcType=INTEGER}, #{numB,jdbcType=INTEGER}, #{numS,jdbcType=INTEGER}, 
-      #{numG,jdbcType=INTEGER}, #{isWqb,jdbcType=INTEGER}, #{isWqs,jdbcType=INTEGER}, 
-      #{isWqg,jdbcType=INTEGER}, #{isWbs,jdbcType=INTEGER}, #{isWbg,jdbcType=INTEGER}, 
-      #{isQbs,jdbcType=INTEGER}, #{isQbg,jdbcType=INTEGER}, #{isBsg,jdbcType=INTEGER}, 
+    values (#{ID,jdbcType=VARCHAR}, #{DAY,jdbcType=VARCHAR}, #{num,jdbcType=VARCHAR},
+      #{numW,jdbcType=INTEGER}, #{numQ,jdbcType=INTEGER}, #{numB,jdbcType=INTEGER}, #{numS,jdbcType=INTEGER},
+      #{numG,jdbcType=INTEGER}, #{isWqb,jdbcType=INTEGER}, #{isWqs,jdbcType=INTEGER},
+      #{isWqg,jdbcType=INTEGER}, #{isWbs,jdbcType=INTEGER}, #{isWbg,jdbcType=INTEGER},
+      #{isQbs,jdbcType=INTEGER}, #{isQbg,jdbcType=INTEGER}, #{isBsg,jdbcType=INTEGER},
       #{isWsg,jdbcType=INTEGER}, #{isQsg,jdbcType=INTEGER}, #{bsgType,jdbcType=INTEGER},
       #{wxType,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
       )
@@ -272,11 +272,11 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{ID,jdbcType=VARCHAR}
   </update>
-  
-   <select id="getBzList" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select a.day,b.is_wqb,b.is_wqs,b.is_wqg,b.is_wbs,b.is_wbg,b.is_wsg,b.is_qbs,b.is_qbg,b.is_qsg,b.is_bsg from cqssc_day a left join (select substr(day,1,8) day,sum(if(is_wqb=2,1,0)) is_wqb,sum(if(is_wqs=2,1,0)) is_wqs,sum(if(is_wqg=2,1,0)) is_wqg,
+
+  <select id="getBzList" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select a.day,b.is_wqb,b.is_wqs,b.is_wqg,b.is_wbs,b.is_wbg,b.is_wsg,b.is_qbs,b.is_qbg,b.is_qsg,b.is_bsg,wx_type,bsg_type from cqssc_day a left join (select substr(day,1,8) day,sum(if(is_wqb=2,1,0)) is_wqb,sum(if(is_wqs=2,1,0)) is_wqs,sum(if(is_wqg=2,1,0)) is_wqg,
 		sum(if(is_wbs=2,1,0)) is_wbs,sum(if(is_wbg=2,1,0)) is_wbg,sum(if(is_wsg=2,1,0)) is_wsg,sum(if(is_qbs=2,1,0)) is_qbs,sum(if(is_qbg=2,1,0)) is_qbg,sum(if(is_qsg=2,1,0)) is_qsg,
-		sum(if(is_bsg=2,1,0)) is_bsg
+		sum(if(is_bsg=2,1,0)) is_bsg,sum(IF(wx_type = 3, 1, 0)) wx_type,sum(IF(wx_type = 4, 1, 0)) bsg_type
 		from cqssc_open_data group by substr(day,1,8)) b
 		on a.day = b.day
 		order by a.day desc

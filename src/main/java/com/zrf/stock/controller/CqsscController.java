@@ -121,6 +121,8 @@ public class CqsscController {
         		json.addProperty("isQbg", data.getIsQbg());
         		json.addProperty("isQsg", data.getIsQsg());
         		json.addProperty("isBsg", data.getIsBsg());
+				json.addProperty("wxType", data.getWxType());
+				json.addProperty("bsgType", data.getBsgType());
         		array.add(json);
     		}
         }
