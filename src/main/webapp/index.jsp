@@ -16,9 +16,12 @@
 <div style="text-align:left;padding-left:400px">
 	<H1>
 		<font color="red">重庆时时彩：</font>
-		<a href="index_cq.jsp" target="_blank">今天</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="index_bz.jsp" target="_blank">豹子</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	</H1>
+	<H1>
+		<a href="index_cq.jsp" target="_blank">组三</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="index_zs10.jsp" target="_blank">全十路</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="index_wx.jsp" target="_blank">五星</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="index_bz.jsp" target="_blank">豹子</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="index_hs012.jsp" target="_blank">012路</a>
 	</H1>
 	<%--<H1>--%>

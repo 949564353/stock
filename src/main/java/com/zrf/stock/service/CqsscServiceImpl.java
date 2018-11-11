@@ -30,6 +30,13 @@ public class CqsscServiceImpl implements CqsscServiceI {
 		List<CqsscData> data = cqsscMapper.getBzList(currentDay);
 		return data;
 	}
+
+	@Override
+	public List<CqsscData> getZs10List(String currentDay){
+		List<CqsscData> data = cqsscMapper.getZs10List(currentDay);
+		return data;
+	}
+
 	@Override
 	public CqsscData selectByPrimaryKey(String key){
 		return cqsscMapper.selectByPrimaryKey(key);
