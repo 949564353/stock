@@ -76,8 +76,14 @@ public class CqsscController {
     		array.add(json);
         }
 
+		int lastNum = 0;
+		if(list.size()!=0){
+			String lastNumStr = list.get(list.size()-1).getDAY().substring(8,11);
+			lastNum = Integer.valueOf(lastNumStr);
+		}
+
 		//剩下的未开奖的数据
-        for(int j=list.size()+1;j<=120;j++){
+        for(int j=lastNum+1;j<=120;j++){
     		JsonObject json = new JsonObject();
 			if(j<10){
 	    		json.addProperty("no", "00"+j);

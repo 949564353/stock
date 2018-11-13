@@ -50,8 +50,8 @@ public class HttpClientUtil
 	public static String SSC_URL = "http://a.apiplus.net/newly.do?token=2a2d75c8c792176f&format=json";
 	public static String SSC_URL_DAY = "http://a.apiplus.net/daily.do?token=2a2d75c8c792176f&format=json";
 
-	public static String beginDay = "2017-08-18";
-	public static String endDay = "2018-07-31";
+	public static String beginDay = "2018-06-03";
+	public static String endDay = "2018-08-01";
 
 	@Scheduled(cron="0 2/10 10-22 * * ?")
 	public void execute()
@@ -77,7 +77,7 @@ public class HttpClientUtil
 		insertData("xjssc", SSC_URL);
 	}
 
-	@Scheduled(cron="0 04 01 * * ?")
+	@Scheduled(cron="0 37 03 * * ?")
 	public void executeDays() throws ParseException, IOException, InterruptedException
 	{
 		try {
@@ -269,7 +269,9 @@ public class HttpClientUtil
 		cell.setIsWsg(getType(dataW.intValue(), dataS.intValue(), dataG.intValue()));
 		cell.setIsQbg(getType(dataQ.intValue(), dataB.intValue(), dataG.intValue()));
 		cell.setIsQsg(getType(dataQ.intValue(), dataS.intValue(), dataG.intValue()));
-
+		cell.setBsgType(is012(dataB.intValue(), dataS.intValue(), dataG.intValue()));
+		int[] wxdata = { dataW.intValue(), dataQ.intValue(), dataB.intValue(), dataS.intValue(), dataG.intValue() };
+		cell.setWxType(getWxType(wxdata));
 		return cell;
 	}
 

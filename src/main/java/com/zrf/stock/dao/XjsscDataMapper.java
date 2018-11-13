@@ -7,6 +7,7 @@ import com.zrf.stock.entity.XjsscData;
 public interface XjsscDataMapper {
 	List<XjsscData> selectCurrentDayNums(String ID);
 	List<XjsscData> getBzList(String ID) ;
+    List<XjsscData> getAllData() ;
     int deleteByPrimaryKey(String ID);
 
     int insert(XjsscData record);

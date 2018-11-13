@@ -36,6 +36,13 @@ public class XjsscServiceImpl implements XjsscServiceI {
 	public XjsscData selectByPrimaryKey(String key){
 		return xjsscMapper.selectByPrimaryKey(key);
 	}
+
+	@Override
+	public List<XjsscData> getAllData(){
+		List<XjsscData> data = xjsscMapper.getAllData();
+		return data;
+	}
+
 	
 	@Override
 	public int save(XjsscData data){

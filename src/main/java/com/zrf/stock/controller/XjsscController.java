@@ -5,6 +5,8 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.zrf.stock.dao.XjsscDataMapper;
+import com.zrf.stock.util.HttpClientUtil;
 import org.apache.commons.lang.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -27,6 +29,8 @@ public class XjsscController {
 	
 	@Resource
 	private XjsscServiceI service;
+	@Resource
+	private XjsscDataMapper mapper;
 	
 	@RequestMapping(value="/getCurrentDay")
 	@ResponseBody
@@ -35,7 +39,7 @@ public class XjsscController {
 		if(!StringUtils.isNotBlank(selectDay)){
 			DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");  
 	        //时间解析
-	        selectDay = DateTime.now().minusHours(3).toString(format);
+	        selectDay = DateTime.now().minusHours(10).minusMinutes(11).toString(format);
 		}
         //String currentDay = "20170531";
         List<XjsscData> list =  service.getCurrentNum(selectDay);
@@ -66,8 +70,14 @@ public class XjsscController {
     		array.add(json);
         }
 
+        int lastNum = 0;
+        if(list.size()!=0){
+			String lastNumStr = list.get(list.size()-1).getDAY().substring(8,11);
+			lastNum = Integer.valueOf(lastNumStr);
+		}
+
 		//剩下的未开奖的数据
-        for(int j=list.size()+1;j<=96;j++){
+        for(int j=lastNum+1;j<=96;j++){
     		JsonObject json = new JsonObject();
 			if(j<10){
 	    		json.addProperty("no", "00"+j);
@@ -109,10 +119,27 @@ public class XjsscController {
         		json.addProperty("isQbg", data.getIsQbg());
         		json.addProperty("isQsg", data.getIsQsg());
         		json.addProperty("isBsg", data.getIsBsg());
+				json.addProperty("wxType", data.getWxType());
+				json.addProperty("bsgType", data.getBsgType());
         		array.add(json);
     		}
         }
         return array.toString();
+	}
+
+
+	@RequestMapping(value="/setWxType")
+	@ResponseBody
+	private String setWxType(HttpServletRequest request){
+
+		List<XjsscData> list = service.getAllData();
+		for(XjsscData data:list){
+			int[] wxdata = { data.getNumW().intValue(), data.getNumQ().intValue(), data.getNumB().intValue(), data.getNumS().intValue(), data.getNumG().intValue() };
+			Integer wxType = HttpClientUtil.getWxType(wxdata);
+			data.setWxType(wxType);
+			mapper.updateByPrimaryKey(data);
+		}
+		return "1";
 	}
 
 	public static void main(String[] args) {

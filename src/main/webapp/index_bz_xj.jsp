@@ -246,6 +246,48 @@ function requestData(){
                 },
                 align: "center",//水平
                 valign: "middle"//垂直
+            },
+            {
+                title: "组选10",
+                field: "wxType",
+                width: "30px",
+                cellStyle : function cellStyle(value, row, index) {
+                    if(value>0)
+                        return {
+                            css : {
+                                "background-color" : "#87cefa"
+                            }
+                        };
+                    else
+                        return {
+                            css : {
+                            }
+                        };
+
+                },
+                align: "center",//水平
+                valign: "middle"//垂直
+            },
+            {
+                title: "组选5",
+                field: "bsgType",
+                width: "30px",
+                cellStyle : function cellStyle(value, row, index) {
+                    if(value>0)
+                        return {
+                            css : {
+                                "background-color" : "#87cefa"
+                            }
+                        };
+                    else
+                        return {
+                            css : {
+                            }
+                        };
+
+                },
+                align: "center",//水平
+                valign: "middle"//垂直
             }
         ]
     });
