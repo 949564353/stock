@@ -50,8 +50,8 @@ public class HttpClientUtil
 	public static String SSC_URL = "http://a.apiplus.net/newly.do?token=2a2d75c8c792176f&format=json";
 	public static String SSC_URL_DAY = "http://a.apiplus.net/daily.do?token=2a2d75c8c792176f&format=json";
 
-	public static String beginDay = "2018-11-11";
-	public static String endDay = "2018-11-12";
+	public static String beginDay = "2017-08-18";
+	public static String endDay = "2018-07-31";
 
 	@Scheduled(cron="0 2/10 10-22 * * ?")
 	public void execute()
@@ -77,11 +77,11 @@ public class HttpClientUtil
 		insertData("xjssc", SSC_URL);
 	}
 
-	@Scheduled(cron="0 40 02 * * ?")
+	@Scheduled(cron="0 04 01 * * ?")
 	public void executeDays() throws ParseException, IOException, InterruptedException
 	{
 		try {
-			executeDayData("cqssc", beginDay, endDay);
+			executeDayData("xjssc", beginDay, endDay);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -91,6 +91,7 @@ public class HttpClientUtil
 	{
 		executeDayData("tjssc", beginDay, endDay);
 	}
+
 
 	public void executexjDays() throws ParseException, IOException, InterruptedException
 	{

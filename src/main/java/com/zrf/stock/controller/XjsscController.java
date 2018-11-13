@@ -34,8 +34,8 @@ public class XjsscController {
 		String selectDay = request.getParameter("selectDay");
 		if(!StringUtils.isNotBlank(selectDay)){
 			DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");  
-	        //时间解析    
-	        selectDay = DateTime.now().toString(format);
+	        //时间解析
+	        selectDay = DateTime.now().minusHours(3).toString(format);
 		}
         //String currentDay = "20170531";
         List<XjsscData> list =  service.getCurrentNum(selectDay);
@@ -91,13 +91,13 @@ public class XjsscController {
 	private String getBzList(HttpServletRequest request){
 		DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");  
         //时间解析    
-        String currentDay = DateTime.now().toString(format);
+        String currentDay = DateTime.now().minusHours(3).toString(format);
         List<XjsscData> list =  service.getBzList(currentDay);
         JsonArray array = new JsonArray();
         for(int i=0;i<list.size();i++){
         	XjsscData data = list.get(i);
     		JsonObject json = new JsonObject();
-    		if(Integer.valueOf(data.getDAY())<=Integer.valueOf(currentDay)){
+    		if(Integer.valueOf(data.getDAY()).intValue()<=Integer.valueOf(currentDay).intValue()){
     			json.addProperty("day", data.getDAY());
         		json.addProperty("isWqb", data.getIsWqb());
         		json.addProperty("isWqs", data.getIsWqs());

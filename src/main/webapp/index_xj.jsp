@@ -9,50 +9,92 @@
 <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
 
 <script>
+
+
+    Date.prototype.format = function(format)
+    {
+        var o = {
+            "M+" : this.getMonth()+1, //month
+            "d+" : this.getDate(),    //day
+            "h+" : this.getHours(),   //hour
+            "m+" : this.getMinutes(), //minute
+            "s+" : this.getSeconds(), //second
+            "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+            "S" : this.getMilliseconds() //millisecond
+        }
+        if(/(y+)/.test(format)) format=format.replace(RegExp.$1,
+            (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+        for(var k in o)if(new RegExp("("+ k +")").test(format))
+            format = format.replace(RegExp.$1,
+                RegExp.$1.length==1 ? o[k] :
+                    ("00"+ o[k]).substr((""+ o[k]).length));
+        return format;
+    }
 	
-$(document).ready(function() {
-	requestData();
-})
+	$(document).ready(function() {
+		requestData();
+	})
 
-function requestData(){
-	var selectDay = $("#selectDay").val();
-	$.ajax({
-		url : 'xjssc/getCurrentDay.sc',// 跳转到 action
-		type : 'post',
-		cache : false,
-		async: false,
-		data : {
-			selectDay:selectDay
-		},
-		dataType : 'json',
-		success : function(obj) {
-			var day;
-			if(obj!=null && obj.length>0){
-				day = obj[0].day;
-	    		for(var i=0;i<obj.length;i++){
-	    			var typeStyle = obj[i].bsg;
-	    			if(obj[i].bsg=="1"){
-	    				typeStyle = "<font color='red'>组三</font>";
-	    			}else if(obj[i].bsg=="2"){
-	    				typeStyle = "<font color='#0000FF'>豹子</font>";
-	    			}else if(obj[i].bsg=='0'){
-	    				typeStyle = "组六";
-	    			}
-	    			$("#"+obj[i].no).html("&nbsp;&nbsp;"+obj[i].no+"&nbsp;&nbsp;&nbsp;&nbsp;     "+obj[i].num+"&nbsp;&nbsp;&nbsp;&nbsp;     "+ typeStyle);
-	    		}
-			}
-			$("#selectDay").text(day);
-		}
-	});
-}
+	function requestData(){
+		var selectDay = $("#selectDay").val();
+		getResultData(selectDay);
 
+	}
 
-function showData(dp){
-	$("#selectDay").val(dp.cal.getDateStr());
-	requestData();
-}
+    function getResultData(selectDay){
+        $.ajax({
+            url : 'xjssc/getCurrentDay.sc',// 跳转到 action
+            type : 'post',
+            cache : false,
+            async: false,
+            data : {
+                selectDay:selectDay
+            },
+            dataType : 'json',
+            success : function(obj) {
+                var day;
+                if(obj!=null && obj.length>0){
+                    day = obj[0].day;
+                    for(var i=0;i<obj.length;i++){
+                        var typeStyle = obj[i].bsg;
+                        if(obj[i].bsg=="1"){
+                            typeStyle = "<font color='red'>组三</font>";
+                        }else if(obj[i].bsg=="2"){
+                            typeStyle = "<font color='#0000FF'>豹子</font>";
+                        }else if(obj[i].bsg=='0'){
+                            typeStyle = "组六";
+                        }
+                        $("#"+obj[i].no).html("&nbsp;&nbsp;"+obj[i].no+"&nbsp;&nbsp;&nbsp;&nbsp;     "+obj[i].num+"&nbsp;&nbsp;&nbsp;&nbsp;     "+ typeStyle);
+                    }
+                }
+                $("#selectDay").text(day);
+            }
+        });
+	}
 
+	function showData(dp){
+		$("#selectDay").val(dp.cal.getDateStr());
+		requestData();
+	}
 
+	function beforeDay(){
+		var selectDay = $("#selectDay").text();
+		var nowDay = new Date(selectDay.substring(0,4),selectDay.substring(4,6)-1,selectDay.substring(6,8));
+		var preDate = new Date(nowDay.getTime() - 24*60*60*1000); //前一天
+		var preDateStr = preDate.format('yyyyMMdd');
+		//alert("1:"+selectDay+";2:"+preDateStr);
+		getResultData(preDateStr);
+	}
+
+	function afterDay(){
+		var selectDay = $("#selectDay").text();
+		//alert("1:"+selectDay);
+		var nowDay = new Date(selectDay.substring(0,4),selectDay.substring(4,6)-1,selectDay.substring(6,8));
+		var nextDate = new Date(nowDay.getTime() + 24*60*60*1000); //后一天
+		var nextDateStr = nextDate.format('yyyyMMdd');
+		//alert("2:"+nextDateStr);
+		getResultData(nextDateStr);
+	}
 </script>
 <style type="text/css">
 td {
@@ -72,9 +114,11 @@ div{
 	
 	<div align="center" id="day" style="font-size:24px">
 		新疆时时彩
+		<a href="javascript:beforeDay()">⇦</a>
 		<font color='red'>
-			<span id="selectDay"></span> 
+			<span id="selectDay"></span>
 		</font>
+		<a href="javascript:afterDay()">⇨</a>
 		<img onClick="WdatePicker({el:'selectDay',dateFmt:'yyyyMMdd',onpicked:function(dp){showData(dp);}})" src="js/My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle" style="cursor:pointer" />
 			
 		开奖号码

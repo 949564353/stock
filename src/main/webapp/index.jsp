@@ -22,13 +22,21 @@
 		<a href="index_zs10.jsp" target="_blank">全十路</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="index_wx.jsp" target="_blank">五星</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="index_bz.jsp" target="_blank">豹子</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="index_hs012.jsp" target="_blank">012路</a>
+		<%--<a href="index_hs012.jsp" target="_blank">012路</a>--%>
 	</H1>
 	<%--<H1>--%>
 		<%--<font color="red">天津时时彩：</font>--%>
 		<%--<a href="index_tj.jsp" target="_blank">今天</a>&nbsp;&nbsp;&nbsp;&nbsp;--%>
 		<%--<a href="index_bz_tj.jsp" target="_blank">豹子</a>--%>
 	<%--</H1>--%>
+
+	<H1>
+		<font color="red">新疆时时彩：</font>
+	</H1>
+	<H1>
+		<a href="index_xj.jsp" target="_blank">组三</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="index_bz_xj.jsp" target="_blank">豹子</a>
+	</H1>
 
 </div>
 
