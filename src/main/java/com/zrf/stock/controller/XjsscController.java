@@ -52,6 +52,7 @@ public class XjsscController {
     		json.addProperty("no", data.getDAY().substring(8, 11));
     		json.addProperty("num", data.getNum());
     		Integer bsg = data.getIsBsg();
+			Integer wxType = data.getWxType();
     		if(bsg!=null){
     			if(bsg.intValue()==1){
     				json.addProperty("bsg", "1");        		
@@ -63,6 +64,12 @@ public class XjsscController {
     		}else{
     			json.addProperty("bsg", "0");
     		}
+
+			if(wxType!=null){
+				json.addProperty("wxType", wxType.toString());
+			}else{
+				json.addProperty("wxType", "0");
+			}
     		
     		if(list.size()==i+1){
     			lastNo = data.getDAY().substring(8, 11);
@@ -89,6 +96,8 @@ public class XjsscController {
 			json.addProperty("day", selectDay);
     		json.addProperty("num", "      ");
     		json.addProperty("bsg", "    ");
+			json.addProperty("bsgType", "    ");
+			json.addProperty("wxType", "    ");
     		array.add(json);
 		}
         return array.toString();
@@ -137,10 +146,12 @@ public class XjsscController {
 			int[] wxdata = { data.getNumW().intValue(), data.getNumQ().intValue(), data.getNumB().intValue(), data.getNumS().intValue(), data.getNumG().intValue() };
 			Integer wxType = HttpClientUtil.getWxType(wxdata);
 			data.setWxType(wxType);
+			data.setBsgType(HttpClientUtil.is012(data.getNumB().intValue(), data.getNumS().intValue(), data.getNumG().intValue()));
 			mapper.updateByPrimaryKey(data);
 		}
 		return "1";
 	}
+
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

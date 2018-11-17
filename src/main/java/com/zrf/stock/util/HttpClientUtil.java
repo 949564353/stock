@@ -275,7 +275,7 @@ public class HttpClientUtil
 		return cell;
 	}
 
-	public Integer getType(int m1, int m2, int m3)
+	public static Integer getType(int m1, int m2, int m3)
 	{
 		Integer rtnInt = Integer.valueOf("0");
 		if ((m1 == m2) && (m2 == m3))
@@ -286,7 +286,7 @@ public class HttpClientUtil
 		return rtnInt;
 	}
 
-	public Integer is012(int m1, int m2, int m3)
+	public static Integer is012(int m1, int m2, int m3)
 	{
 		int type = getType(m1, m2, m3).intValue();
 		Integer rtnInt = Integer.valueOf("0");
@@ -362,9 +362,12 @@ public class HttpClientUtil
 //			System.out.println("1111");
 //		}
 
-		DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");
-		//时间解析
-		String currentDay = DateTime.now().toString(format);
-		System.out.println(currentDay);
+				int[] a = { 8, 8, 1, 1, 5 };
+		System.out.println(getWxType(a));
+
+//		DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");
+//		//时间解析
+//		String currentDay = DateTime.now().toString(format);
+//		System.out.println(currentDay);
 	}
 }
