@@ -8,6 +8,7 @@ public interface CqsscServiceI {
 	public List<CqsscData> getCurrentNum(String currentDay);
 	public List<CqsscData> getBzList(String currentDay);
 	public List<CqsscData> getZs10List(String currentDay);
+	public List<CqsscData> getCountNum(String currentDay);
 	public CqsscData selectByPrimaryKey(String key);
 	public int save(CqsscData data);
 }

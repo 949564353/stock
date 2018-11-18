@@ -22,6 +22,7 @@
 		<a href="index_wx.jsp" target="_blank">五星</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="index_bz.jsp" target="_blank">豹子</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="index_zs10.jsp" target="_blank">全十路</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="index_line.jsp" target="_blank">拆线图</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<%--<a href="index_hs012.jsp" target="_blank">012路</a>--%>
 	</H1>
 	<%--<H1>--%>

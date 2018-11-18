@@ -45,6 +45,10 @@ public class XjsscData {
 
     private Date createTime;
 
+    private Integer z30;
+
+    private Integer z20;
+
     public String getID() {
         return ID;
     }
@@ -204,6 +208,23 @@ public class XjsscData {
     public void setWxType(Integer wxType) {
         this.wxType = wxType;
     }
+
+    public Integer getZ30() {
+        return z30;
+    }
+
+    public void setZ30(Integer z30) {
+        this.z30 = z30;
+    }
+
+    public Integer getZ20() {
+        return z20;
+    }
+
+    public void setZ20(Integer z20) {
+        this.z20 = z20;
+    }
+
 
     public Date getCreateTime() {
         return createTime;

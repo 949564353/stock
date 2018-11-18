@@ -130,6 +130,8 @@ public class XjsscController {
         		json.addProperty("isBsg", data.getIsBsg());
 				json.addProperty("wxType", data.getWxType());
 				json.addProperty("bsgType", data.getBsgType());
+				json.addProperty("bz30", data.getZ30());
+				json.addProperty("bz20", data.getZ20());
         		array.add(json);
     		}
         }

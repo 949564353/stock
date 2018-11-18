@@ -1,16 +1,22 @@
 package com.zrf.stock.controller;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -131,6 +137,8 @@ public class CqsscController {
 				json.addProperty("isBsg", data.getIsBsg());
 				json.addProperty("wxType", data.getWxType());
 				json.addProperty("bsgType", data.getBsgType());
+				json.addProperty("bz30", data.getZ30());
+				json.addProperty("bz20", data.getZ20());
 				array.add(json);
 			}
         }
@@ -174,6 +182,43 @@ public class CqsscController {
 		}
 		return array.toString();
 	}
+
+
+	@RequestMapping(value="/getCountNum")
+	@ResponseBody
+	private String getCountNum(HttpServletRequest request){
+		List<JSONObject> rtnList = new ArrayList<>();
+		String selectMonth = request.getParameter("selectMonth");
+		if(!StringUtils.isNotBlank(selectMonth)){
+			DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMM");
+			//时间解析
+			selectMonth = DateTime.now().toString(format);
+		}
+		List<CqsscData> list =  service.getCountNum(selectMonth);
+		if(!CollectionUtils.isEmpty(list)){
+			List z20List = list.stream().map(CqsscData::getZ20).collect(Collectors.toList());
+			List z30List = list.stream().map(CqsscData::getZ30).collect(Collectors.toList());
+			List dayList = list.stream().map(CqsscData::getDAY).collect(Collectors.toList());
+			JSONObject object = new JSONObject();
+			object.put("name","z20");
+			object.put("color","red");
+			object.put("data", z20List);
+			rtnList.add(object);
+			JSONObject object2 = new JSONObject();
+			object2.put("name","z30");
+			object2.put("color","#00B050");
+			object2.put("data", z30List);
+			rtnList.add(object2);
+
+			JSONObject object3 = new JSONObject();
+			object3.put("type","category");
+			object3.put("data",dayList);
+			rtnList.add(object3);
+		}
+		return rtnList.toString();
+	}
+
+
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

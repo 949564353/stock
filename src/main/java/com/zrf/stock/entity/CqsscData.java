@@ -43,6 +43,10 @@ public class CqsscData {
     
     private Integer wxType;
 
+    private Integer z30;
+
+    private Integer z20;
+
     private Date createTime;
 
     public String getID() {
@@ -212,5 +216,21 @@ public class CqsscData {
 	public void setWxType(Integer wxType) {
 		this.wxType = wxType;
 	}
+
+    public Integer getZ30() {
+        return z30;
+    }
+
+    public void setZ30(Integer z30) {
+        this.z30 = z30;
+    }
+
+    public Integer getZ20() {
+        return z20;
+    }
+
+    public void setZ20(Integer z20) {
+        this.z20 = z20;
+    }
     
 }

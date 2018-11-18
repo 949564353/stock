@@ -18,6 +18,16 @@
     </properties>  
    
     <dependencies>
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jcommon</artifactId>
+            <version>1.0.23</version>
+        </dependency>
+<!--     <dependency>-->
+                <!--<groupId>org.jfree</groupId>-->
+                <!--<artifactId>chart</artifactId>-->
+                <!--<version>1.0.19</version>-->
+        <!--</dependency>-->
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
@@ -150,9 +160,9 @@
             <groupId>org.apache.httpcomponents</groupId>  
             <artifactId>httpclient</artifactId>  
             <version>4.5</version>  
-        </dependency>  
-        
-    </dependencies>  
+        </dependency>
+
+    </dependencies>
   
     <build>
         <resources>

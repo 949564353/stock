@@ -8,6 +8,7 @@ public interface CqsscDataMapper {
 	List<CqsscData> selectCurrentDayNums(String ID);
 	List<CqsscData> getBzList(String ID) ;
     List<CqsscData> getZs10List(String ID) ;
+    List<CqsscData> getCountNum(String ID) ;
     int deleteByPrimaryKey(String ID);
 
     int insert(CqsscData record);

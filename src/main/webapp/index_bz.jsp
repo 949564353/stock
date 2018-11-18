@@ -288,6 +288,48 @@
                         },
                         align: "center",//水平
                         valign: "middle"//垂直
+                    },
+                    {
+                        title: "组30",
+                        field: "bz30",
+                        width: "30px",
+                        cellStyle : function cellStyle(value, row, index) {
+                            if(value>0)
+                                return {
+                                    css : {
+                                        "background-color" : "#87cefa"
+                                    }
+                                };
+                            else
+                                return {
+                                    css : {
+                                    }
+                                };
+
+                        },
+                        align: "center",//水平
+                        valign: "middle"//垂直
+                    },
+                    {
+                        title: "组20",
+                        field: "bz20",
+                        width: "30px",
+                        cellStyle : function cellStyle(value, row, index) {
+                            if(value>0)
+                                return {
+                                    css : {
+                                        "background-color" : "#87cefa"
+                                    }
+                                };
+                            else
+                                return {
+                                    css : {
+                                    }
+                                };
+
+                        },
+                        align: "center",//水平
+                        valign: "middle"//垂直
                     }
                 ]
             });
