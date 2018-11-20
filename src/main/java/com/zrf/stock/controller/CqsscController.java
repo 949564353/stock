@@ -11,6 +11,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import com.alibaba.fastjson.JSONObject;
+import com.zrf.stock.dao.CqsscDayMapper;
+import com.zrf.stock.entity.CqsscDay;
 import org.apache.commons.lang.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -31,7 +33,10 @@ public class CqsscController {
 	
 	@Resource
 	private CqsscServiceI service;
-	
+
+	@Resource
+	private CqsscDayMapper dayMapper;
+
 	@RequestMapping(value="/getCurrentDay")
 	@ResponseBody
 	private String getCurrentNum(HttpServletRequest request){
@@ -219,9 +224,44 @@ public class CqsscController {
 	}
 
 
+	@RequestMapping(value="/addDay")
+	@ResponseBody
+	private void addDay(HttpServletRequest request){
+		List<JSONObject> rtnList = new ArrayList<>();
+		String beginDay = request.getParameter("beginDay");
+		String endDay = request.getParameter("endDay");
+		if(StringUtils.isNotBlank(beginDay) && StringUtils.isNotBlank(endDay) && Integer.valueOf(beginDay).intValue() < Integer.valueOf(endDay).intValue()){
+			DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");
+			DateTime beginDate = DateTime.parse(beginDay,format);
+			DateTime endDate = DateTime.parse(endDay,format);
+			while(beginDate.compareTo(endDate)<=0){
+				String insertDate = endDate.toString(format);
+				CqsscDay day = new CqsscDay();
+				day.setDAY(insertDate);
+				dayMapper.insert(day);
+				endDate = endDate.minusDays(1);
+			}
+		}
+	}
+
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		String beginDay = "20180401";
+		String endDay = "20180520";
+		if(StringUtils.isNotBlank(beginDay) && StringUtils.isNotBlank(endDay) && Integer.valueOf(beginDay).intValue() < Integer.valueOf(endDay).intValue()){
+			DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");
+			DateTime beginDate = DateTime.parse(beginDay,format);
+			DateTime endDate = DateTime.parse(endDay,format);
+			while(beginDate.compareTo(endDate)<0){
+				String insertDate = endDate.toString(format);
+//				CqsscDay day = new CqsscDay();
+//				day.setDAY(insertDate);
+//				dayMapper.insert(day);
+				System.out.println(insertDate);
+				endDate = endDate.minusDays(1);
+			}
+		}
 
 	}
 

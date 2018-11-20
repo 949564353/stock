@@ -139,6 +139,42 @@ public class XjsscController {
 	}
 
 
+	@RequestMapping(value="/getZs10List")
+	@ResponseBody
+	private String getZs10List(HttpServletRequest request){
+		String selectDay = request.getParameter("selectDay");
+		if(!StringUtils.isNotBlank(selectDay)){
+			DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");
+			//时间解析
+			selectDay = DateTime.now().toString(format);
+		}
+		List<XjsscData> list =  service.getZs10List(selectDay);
+		JsonArray array = new JsonArray();
+		for(int i=0;i<list.size();i++){
+			XjsscData data = list.get(i);
+			JsonObject json = new JsonObject();
+			json.addProperty("day", data.getDAY());
+			json.addProperty("num", data.getNum());
+			json.addProperty("num_w", data.getNumW());
+			json.addProperty("num_q", data.getNumQ());
+			json.addProperty("num_b", data.getNumB());
+			json.addProperty("num_s", data.getNumS());
+			json.addProperty("num_g", data.getNumG());
+			json.addProperty("isWqb", data.getIsWqb());
+			json.addProperty("isWqs", data.getIsWqs());
+			json.addProperty("isWqg", data.getIsWqg());
+			json.addProperty("isWbs", data.getIsWbs());
+			json.addProperty("isWbg", data.getIsWbg());
+			json.addProperty("isWsg", data.getIsWsg());
+			json.addProperty("isQbs", data.getIsQbs());
+			json.addProperty("isQbg", data.getIsQbg());
+			json.addProperty("isQsg", data.getIsQsg());
+			json.addProperty("isBsg", data.getIsBsg());
+			array.add(json);
+		}
+		return array.toString();
+	}
+
 	@RequestMapping(value="/setWxType")
 	@ResponseBody
 	private String setWxType(HttpServletRequest request){

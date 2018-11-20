@@ -312,4 +312,12 @@
       <include refid="Base_Column_List" />
 		from xjssc_open_data where wx_type is null;
   </select>
+
+
+  <select id="getZs10List" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT DAY, num, num_w%3 as num_w, num_q%3 as num_q, num_b%3 as num_b, num_s%3 as num_s, num_g%3 as num_g, is_wqb, is_wqs, is_wqg, is_wbs,is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg FROM `xjssc_open_data`
+    where day like "%"#{ID}"%" ORDER BY DAY DESC
+  </select>
+
+
 </mapper>

@@ -43,6 +43,12 @@ public class XjsscServiceImpl implements XjsscServiceI {
 		return data;
 	}
 
+	@Override
+	public List<XjsscData> getZs10List(String currentDay){
+		List<XjsscData> data = xjsscMapper.getZs10List(currentDay);
+		return data;
+	}
+
 	
 	@Override
 	public int save(XjsscData data){

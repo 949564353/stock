@@ -37,7 +37,8 @@
 	<H1>
 		<a href="index_xj.jsp" target="_blank">组三</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="index_wx_xj.jsp" target="_blank">五星</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="index_bz_xj.jsp" target="_blank">豹子</a>
+		<a href="index_bz_xj.jsp" target="_blank">豹子</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="index_zs10_xj.jsp" target="_blank">全十路</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	</H1>
 
 </div>
