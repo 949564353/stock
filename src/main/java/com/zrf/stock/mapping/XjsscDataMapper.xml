@@ -82,8 +82,8 @@
       #{numG,jdbcType=INTEGER}, #{isWqb,jdbcType=INTEGER}, #{isWqs,jdbcType=INTEGER}, 
       #{isWqg,jdbcType=INTEGER}, #{isWbs,jdbcType=INTEGER}, #{isWbg,jdbcType=INTEGER}, 
       #{isQbs,jdbcType=INTEGER}, #{isQbg,jdbcType=INTEGER}, #{isBsg,jdbcType=INTEGER},
-      #{isWsg,jdbcType=INTEGER}, #{bsgType,jdbcType=INTEGER},
-      #{isQsg,jdbcType=INTEGER}, #{wxType,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
+      #{isWsg,jdbcType=INTEGER}, #{isQsg,jdbcType=INTEGER},
+      #{bsgType,jdbcType=INTEGER},#{wxType,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.zrf.stock.entity.XjsscData">

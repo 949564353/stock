@@ -1,10 +1,7 @@
 package com.zrf.stock.controller;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
@@ -112,7 +109,32 @@ public class CqsscController {
 		}
         return array.toString();
 	}
-	
+
+
+	@RequestMapping(value="/getZ5")
+	@ResponseBody
+	private String getZ5(HttpServletRequest request){
+		String num = request.getParameter("num");
+		List<CqsscData> list =  service.getZ5(num);
+		JsonArray array = new JsonArray();
+		Map<String,String> map = list.stream().collect(Collectors.toMap(CqsscData::getDAY,CqsscData::getNum));
+		for(int i=1;i<121;i++){
+			String numStr = i+"";
+			if(i<10){
+				numStr = "00"+i;
+			}else if(i<100){
+				numStr = "0"+i;
+			}
+			String count  = map.get(numStr);
+			String countStr = StringUtils.isNotBlank(count)?count:"";
+
+			JsonObject json = new JsonObject();
+			json.addProperty("no", numStr);
+			json.addProperty("num", countStr);
+			array.add(json);
+		}
+		return array.toString();
+	}
 	
 	
 	@RequestMapping(value="/getBzList")

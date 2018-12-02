@@ -24,6 +24,12 @@ public class CqsscServiceImpl implements CqsscServiceI {
 		List<CqsscData> data = cqsscMapper.selectCurrentDayNums(currentDay);
 		return data;
 	}
+
+	@Override
+	public List<CqsscData> getZ5(String currentDay){
+		List<CqsscData> data = cqsscMapper.getZ5(currentDay);
+		return data;
+	}
 	
 	@Override
 	public List<CqsscData> getBzList(String currentDay){

@@ -72,7 +72,8 @@
                         field: "num",
                         width: "20px",
                         align: "center"//水平
-                    },{
+                    },
+					{
                         title: "万位",
                         field: "num_w",
                         width: "20px",

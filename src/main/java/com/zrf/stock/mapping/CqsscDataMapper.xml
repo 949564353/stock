@@ -321,4 +321,8 @@
     SELECT DAY, num, num_w%3 as num_w, num_q%3 as num_q, num_b%3 as num_b, num_s%3 as num_s, num_g%3 as num_g, is_wqb, is_wqs, is_wqg, is_wbs,is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg FROM `cqssc_open_data`
     where day like "%"#{ID}"%" ORDER BY DAY DESC
   </select>
+
+  <select id="getZ5" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT SUBSTR(DAY,9,3) AS DAY,COUNT(1) AS num FROM stock.`cqssc_open_data` WHERE wx_type = 4 GROUP BY SUBSTR(DAY,9,3) HAVING COUNT(1)> #{ID} ORDER BY DAY ASC
+  </select>
 </mapper>
