@@ -59,13 +59,13 @@
                         for(var i=0;i<obj.length;i++){
                             var typeStyle = obj[i].wxType;
                             if(obj[i].wxType=="1"){
-                                typeStyle = "<font color='red'>组30</font>";
+                                typeStyle = "<font color='red'><b>组30</b></font>";
                             }else if(obj[i].wxType=="2"){
-                                typeStyle = "<font color='#0000FF'>组20</font>";
+                                typeStyle = "<font color='#0000FF'><b>组20</b></font>";
                             }else if(obj[i].wxType=="3"){
-                                typeStyle = "<font color='#0000FF'>组10</font>";
+                                typeStyle = "<font color='#00FF00'><b>组10</b></font>";
                             }else if(obj[i].wxType=="4"){
-                                typeStyle = "<font color='#0000FF'>组5</font>";
+                                typeStyle = "<font color='#00FF00'><b>组5</b></font>";
                             }else if(obj[i].wxType=='6'){
                                 typeStyle = "<font color='#FF00FF'>组120</font>";
                             }else if(obj[i].wxType=='7'){

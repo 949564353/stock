@@ -66,17 +66,19 @@
                             var even = obj[i].even;
                             var odd = obj[i].odd;
                             var typeStyle = "";
-                            if(even=="1" || even =="4"){
-                                typeStyle = "<font color='red'>"+odd+":"+even+"</font>";
-                            }else if(even=="0" || even=="5"){
-                                typeStyle = "<font color='#0000FF'>"+odd+":"+even+"</font>";
+                            if(even =="1"){
+                                typeStyle = "<font color='red'><b>"+odd+":"+even+"</b></font>";
+                            }else if(even=="4" ){
+                                typeStyle = "<font color='#0000FF'><b>"+odd+":"+even+"</b></font>";
+							}else if(even=="0" || even=="5"){
+                                typeStyle = "<font color='#00FF00'><b>"+odd+":"+even+"</b></font>";
                             }else if(!isEmpty(obj[i].num)){
                                 typeStyle = odd+":"+even;
                             }
 
                             var middleStyle = obj[i].middle;
                             if(obj[i].middle=="3" || obj[i].middle=="9"){
-                                middleStyle = "<font color='red'>"+obj[i].middle+"</font>";
+                                middleStyle = "<font color='red'><b>"+obj[i].middle+"</b></font>";
 							}
 
 							//alert(obj[i].num+"---dd"+typeStyle);

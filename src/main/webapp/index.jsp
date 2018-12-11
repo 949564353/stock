@@ -22,7 +22,7 @@
 		<a href="index_wx.jsp" target="_blank">五星</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="index_bz.jsp" target="_blank">豹子</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="index_zs10.jsp" target="_blank">全十路</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="index_line.jsp" target="_blank">拆线图</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="index_line.jsp" target="_blank">走势图</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<%--<a href="index_hs012.jsp" target="_blank">012路</a>--%>
 	</H1>
 	<%--<H1>--%>
@@ -41,6 +41,12 @@
 		<a href="index_zs10_xj.jsp" target="_blank">全十路</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	</H1>
 
+	<H1>
+		<font color="red">11选5：</font>
+	</H1>
+	<H1>
+		<a href="index_11x5.jsp" target="_blank">综合页面</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	</H1>
 </div>
 
 </body>
