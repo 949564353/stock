@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zrf.stock.dao.Sd11X5DataMapper">
+  <resultMap id="BaseResultMap" type="com.zrf.stock.entity.Sd11X5Data">
+    <id column="id" jdbcType="VARCHAR" property="ID" />
+    <result column="day" jdbcType="VARCHAR" property="DAY" />
+    <result column="num" jdbcType="VARCHAR" property="num" />
+    <result column="num_w" jdbcType="VARCHAR" property="numW" />
+    <result column="num_q" jdbcType="VARCHAR" property="numQ" />
+    <result column="num_b" jdbcType="VARCHAR" property="numB" />
+    <result column="num_s" jdbcType="VARCHAR" property="numS" />
+    <result column="num_g" jdbcType="VARCHAR" property="numG" />
+    <result column="num_middle" jdbcType="VARCHAR" property="numMiddle" />
+    <result column="odd_num" jdbcType="INTEGER" property="oddNum" />
+    <result column="even_num" jdbcType="INTEGER" property="evenNum" />
+  </resultMap>
+
+  <resultMap id="BaseResultExtendMap" type="com.zrf.stock.entity.Sd11X5Data">
+    <id column="id" jdbcType="VARCHAR" property="ID" />
+    <result column="day" jdbcType="VARCHAR" property="DAY" />
+    <result column="zero"  property="zero" />
+    <result column="one"  property="one" />
+    <result column="four"  property="four" />
+    <result column="five"  property="five" />
+  </resultMap>
+
+
+  <sql id="Base_Column_List">
+    id, day, num, num_w, num_q, num_b, num_s, num_g, odd_num, even_num,num_middle
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sd11x5_open_data
+    where id = #{ID,jdbcType=VARCHAR}
+  </select>
+  <select id="selectCurrentDayNums" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sd11x5_open_data
+    where day like "%"#{ID}"%"
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sd11x5_open_data
+    where id = #{ID,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zrf.stock.entity.Sd11X5Data">
+    insert into sd11x5_open_data (id, day, num,
+      num_w, num_q, num_b, num_s,
+      num_g, odd_num, even_num,num_middle
+      )
+    values (#{ID,jdbcType=VARCHAR}, #{DAY,jdbcType=VARCHAR}, #{num,jdbcType=VARCHAR},
+      #{numW,jdbcType=VARCHAR}, #{numQ,jdbcType=VARCHAR}, #{numB,jdbcType=VARCHAR}, #{numS,jdbcType=VARCHAR},
+      #{numG,jdbcType=VARCHAR}, #{oddNum,jdbcType=INTEGER}, #{evenNum,jdbcType=INTEGER},#{numMiddle,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zrf.stock.entity.Sd11X5Data">
+    insert into sd11x5_open_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ID != null">
+        id,
+      </if>
+      <if test="DAY != null">
+        day,
+      </if>
+      <if test="num != null">
+        num,
+      </if>
+      <if test="numW != null">
+        num_w,
+      </if>
+      <if test="numQ != null">
+        num_q,
+      </if>
+      <if test="numB != null">
+        num_b,
+      </if>
+      <if test="numS != null">
+        num_s,
+      </if>
+      <if test="numG != null">
+        num_g,
+      </if>
+      <if test="oddNum != null">
+        odd_num,
+      </if>
+      <if test="evenNum != null">
+        even_num,
+      </if>
+      <if test="numMiddle != null">
+        num_middle,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ID != null">
+        #{ID,jdbcType=VARCHAR},
+      </if>
+      <if test="DAY != null">
+        #{DAY,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=VARCHAR},
+      </if>
+      <if test="numW != null">
+        #{numW,jdbcType=VARCHAR},
+      </if>
+      <if test="numQ != null">
+        #{numQ,jdbcType=VARCHAR},
+      </if>
+      <if test="numB != null">
+        #{numB,jdbcType=VARCHAR},
+      </if>
+      <if test="numS != null">
+        #{numS,jdbcType=VARCHAR},
+      </if>
+      <if test="numG != null">
+        #{numG,jdbcType=VARCHAR},
+      </if>
+      <if test="oddNum != null">
+        #{oddNum,jdbcType=INTEGER},
+      </if>
+      <if test="evenNum != null">
+        #{evenNum,jdbcType=INTEGER},
+      </if>
+      <if test="numMiddle != null">
+        #{numMiddle,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zrf.stock.entity.Sd11X5Data">
+    update sd11x5_open_data
+    <set>
+      <if test="DAY != null">
+        day = #{DAY,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        num = #{num,jdbcType=VARCHAR},
+      </if>
+      <if test="numW != null">
+        num_w = #{numW,jdbcType=VARCHAR},
+      </if>
+      <if test="numQ != null">
+        num_q = #{numQ,jdbcType=VARCHAR},
+      </if>
+      <if test="numB != null">
+        num_b = #{numB,jdbcType=VARCHAR},
+      </if>
+      <if test="numS != null">
+        num_s = #{numS,jdbcType=VARCHAR},
+      </if>
+      <if test="numG != null">
+        num_g = #{numG,jdbcType=VARCHAR},
+      </if>
+      <if test="oddNum != null">
+        odd_num = #{oddNum,jdbcType=INTEGER},
+      </if>
+      <if test="evenNum != null">
+        even_num = #{evenNum,jdbcType=INTEGER},
+      </if>
+      <if test="numMiddle != null">
+        num_middle = #{numMiddle,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{ID,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zrf.stock.entity.Sd11X5Data">
+    update sd11x5_open_data
+    set day = #{DAY,jdbcType=VARCHAR},
+      num = #{num,jdbcType=VARCHAR},
+      num_w = #{numW,jdbcType=VARCHAR},
+      num_q = #{numQ,jdbcType=VARCHAR},
+      num_b = #{numB,jdbcType=VARCHAR},
+      num_s = #{numS,jdbcType=VARCHAR},
+      num_g = #{numG,jdbcType=VARCHAR},
+      odd_num = #{oddNum,jdbcType=INTEGER},
+      even_num = #{evenNum,jdbcType=INTEGER},
+      num_middle = #{numMiddle,jdbcType=VARCHAR}
+    where id = #{ID,jdbcType=VARCHAR}
+  </update>
+
+  <select id="getBzList" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT
+  a.day,
+  b.zero,
+  b.five,
+  b.one,
+  b.four
+FROM
+  cqssc_day a
+  LEFT JOIN
+    (SELECT
+      SUBSTR(DAY, 1, 8) DAY,
+      SUM(IF(odd_num = 0, 1, 0)) zero,
+      SUM(IF(odd_num = 5, 1, 0)) five,
+      SUM(IF(odd_num = 1 ,1, 0)) one,
+      SUM(IF(odd_num = 4, 1, 0)) four
+    FROM
+      sd11x5_open_data
+    GROUP BY SUBSTR(DAY, 1, 8)) b
+    ON a.day = b.day
+ORDER BY a.day DESC
+  </select>
+
+  <select id="getMiddleNum" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    FROM sd11x5_open_data a where a.num_middle = ""
+  </select>
+</mapper>
