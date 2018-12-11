@@ -66,6 +66,10 @@
                                 typeStyle = "<font color='#0000FF'>组10</font>";
                             }else if(obj[i].wxType=="4"){
                                 typeStyle = "<font color='#0000FF'>组5</font>";
+                            }else if(obj[i].wxType=='6'){
+                                typeStyle = "<font color='#FF00FF'>组120</font>";
+                            }else if(obj[i].wxType=='7'){
+                                typeStyle = "组60";
                             }else if(obj[i].wxType=='0'){
                                 typeStyle = "其它";
                             }
