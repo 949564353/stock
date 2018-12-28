@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>广东11选5——当天</title>
+	<title>广东11选5-当天</title>
 	<link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap.css" />
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/dateformat-min.js"></script>
@@ -33,11 +33,23 @@
 
         $(document).ready(function() {
             requestData();
+            $(":radio").click(function(){
+                $("#3").attr("checked",false);
+                $("#4").attr("checked",false);
+                $("#5").attr("checked",false);
+                $("#6").attr("checked",false);
+                $("#7").attr("checked",false);
+                $("#8").attr("checked",false);
+                $("#9").attr("checked",false);
+                $(this).attr("checked",'checked'); ;
+                requestData();
+            });
         })
 
         function requestData(){
-            var selectDay = $("#selectDay").val();
+            var selectDay = $("#selectDay").text();
             getResultData(selectDay);
+            getMiddleCountData(selectDay);
         }
 
         function isEmpty(obj){
@@ -46,6 +58,22 @@
             }else{
                 return false;
             }
+        }
+
+        function getMiddleCountData(selectDay){
+            $.ajax({
+                url : 'gd11x5/getMiddleCount.sc',// 跳转到 action
+                type : 'post',
+                cache : false,
+                async: false,
+                data : {
+                    selectDay:selectDay
+                },
+                dataType : 'text',
+                success : function(obj) {
+                    $("#middle").text(obj);
+                }
+            });
         }
 
         function getResultData(selectDay){
@@ -76,8 +104,13 @@
                                 typeStyle = odd+":"+even;
                             }
 
+                            // var count = document.getElementById("count");
+                            // var value = count.options[count.selectedIndex].value;
+
+                            var value = $("input[name='count'][checked]").val();
+
                             var middleStyle = obj[i].middle;
-                            if(obj[i].middle=="3" || obj[i].middle=="9"){
+                            if(obj[i].middle== value){
                                 middleStyle = "<font color='red'><b>"+obj[i].middle+"</b></font>";
 							}
 
@@ -90,7 +123,8 @@
                             // }else if(obj[i].bsg=='0'){
                             //     typeStyle = "组六";
                             // }
-                            $("#"+obj[i].no).html("&nbsp;&nbsp;"+obj[i].no+"&nbsp;&nbsp;&nbsp;&nbsp;     "+obj[i].num+"&nbsp;&nbsp;&nbsp;&nbsp;     "+typeStyle+"&nbsp;&nbsp;&nbsp;&nbsp;     "+middleStyle);
+                            //$("#"+obj[i].no).html("&nbsp;&nbsp;"+obj[i].no+"&nbsp;&nbsp;&nbsp;&nbsp;     "+obj[i].num+"&nbsp;&nbsp;&nbsp;&nbsp;     "+typeStyle+"&nbsp;&nbsp;&nbsp;&nbsp;     "+middleStyle);
+                            $("#"+obj[i].no).html("&nbsp;&nbsp;"+obj[i].no+"&nbsp;&nbsp;     "+obj[i].num+"&nbsp;&nbsp;     "+typeStyle+"&nbsp;&nbsp;     "+middleStyle);
                         }
                     }
                     $("#selectDay").text(day);
@@ -111,6 +145,7 @@
             var preDateStr = preDate.format('yyyyMMdd');
             //alert("1:"+selectDay+";2:"+preDateStr);
             getResultData(preDateStr);
+            getMiddleCountData(preDateStr);
         }
 
         function afterDay(){
@@ -121,13 +156,18 @@
             var nextDateStr = nextDate.format('yyyyMMdd');
             //alert("2:"+nextDateStr);
             getResultData(nextDateStr);
+            getMiddleCountData(preDateStr);
         }
+
+        // function changeCount() {
+        //     requestData();
+        // }
 
 
 	</script>
 	<style type="text/css">
 		td {
-			width: 220px;
+			width: 200px;
 		}
 
 		div{
@@ -151,6 +191,25 @@
 	<img onClick="WdatePicker({el:'selectDay',dateFmt:'yyyyMMdd',onpicked:function(dp){showData(dp);}})" src="js/My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle" style="cursor:pointer" />
 
 	开奖号码
+	<br>
+	<br>
+	<input type="radio" name="count" value="3" id="3">3
+	<input type="radio" name="count" value="4" id="4">4
+	<input type="radio" name="count" value="5" id="5">5
+	<input type="radio" name="count" checked value="6" id="6">6
+	<input type="radio" name="count" value="7" id="7">7
+	<input type="radio" name="count" value="8" id="8">8
+	<input type="radio" name="count" value="9" id="9">9
+
+	<%--<select id="count" onchange="changeCount();" style="width: 50px;">--%>
+		<%--<option value="3">3</option>--%>
+		<%--<option value="4">4</option>--%>
+		<%--<option value="5">5</option>--%>
+		<%--<option value="6">6</option>--%>
+		<%--<option value="7">7</option>--%>
+		<%--<option value="8">8</option>--%>
+		<%--<option value="9">9</option>--%>
+	<%--</select>--%>
 </div>
 <table align="center" border="1">
 	<tr>
@@ -295,6 +354,7 @@
 	</tr>
 </table>
 <div style="margin-left:200px;">
+	<div id="middle">&nbsp;&nbsp;</div>
     <div>
         5:0/65.17；
         4:1/5.19；
@@ -304,13 +364,13 @@
         0:5/392；
     </div>
     <div>
-        3:14；
-        4:6.2；
-        5:4.34；
-        6:3.9；
-        7:4.34；
-        8:6.2；
-        9:14
+        3:16.14；
+        4:7.17；
+        5:5.02；
+        6:4.52；
+        7:5；*
+        8:7.16；
+        9:16.1
     </div>
 </div>
 </body>

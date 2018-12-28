@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import com.alibaba.fastjson.JSONObject;
+import com.zrf.stock.dao.CqsscDataMapper;
 import com.zrf.stock.dao.CqsscDayMapper;
 import com.zrf.stock.entity.CqsscDay;
 import org.apache.commons.lang.StringUtils;
@@ -34,6 +35,9 @@ public class CqsscController {
 	@Resource
 	private CqsscDayMapper dayMapper;
 
+	@Resource
+	public CqsscDataMapper cqsscMapper;
+
 	@RequestMapping(value="/getCurrentDay")
 	@ResponseBody
 	private String getCurrentNum(HttpServletRequest request){
@@ -44,68 +48,65 @@ public class CqsscController {
 	        selectDay = DateTime.now().toString(format);
 		}
         List<CqsscData> list =  service.getCurrentNum(selectDay);
+
+		Map<String, CqsscData> dataMap = new HashMap<>();
+		list.stream().forEach(data -> dataMap.put(data.getDAY().substring(8,11), data));
         JsonArray array = new JsonArray();
         String lastNo = "";
-        for(int i=0;i<list.size();i++){
-        	CqsscData data = list.get(i);
-    		JsonObject json = new JsonObject();
-    		json.addProperty("day", data.getDAY().substring(0,8));
-    		json.addProperty("no", data.getDAY().substring(8, 11));
-    		json.addProperty("num", data.getNum());
-    		Integer bsg = data.getIsBsg();
-    		Integer bsgType = data.getBsgType();
-    		Integer wxType = data.getWxType();
-    		if(bsg!=null){
-    			if(bsg.intValue()==1){
-    				json.addProperty("bsg", "1");        		
-    			}else if(bsg.intValue()==2){
-    				json.addProperty("bsg", "2");
-    			}else{
-    				json.addProperty("bsg", "0");
-    			}
-    		}else{
-    			json.addProperty("bsg", "0");
-    		}
-    		if(bsgType!=null){
-    			json.addProperty("bsgType", bsgType);
-    		}else{
-    			json.addProperty("bsgType", "0");
-    		}
-    		
-    		if(wxType!=null){
-        		json.addProperty("wxType", wxType.toString());
-    		}else{
-        		json.addProperty("wxType", "0");
-    		}
-    		
-    		if(list.size()==i+1){
-    			lastNo = data.getDAY().substring(8, 11);
-    		}
-    		array.add(json);
-        }
-
-		int lastNum = 0;
-		if(list.size()!=0){
-			String lastNumStr = list.get(list.size()-1).getDAY().substring(8,11);
-			lastNum = Integer.valueOf(lastNumStr);
-		}
-
-		//剩下的未开奖的数据
-        for(int j=lastNum+1;j<=120;j++){
-    		JsonObject json = new JsonObject();
-			if(j<10){
-	    		json.addProperty("no", "00"+j);
+        for(int j=1;j<=120;j++){
+        	String key = ""+j;
+        	if(j<10){
+        		key = "00"+j;
 			}else if(j<100){
-	    		json.addProperty("no", "0"+j);
-			}else{
-	    		json.addProperty("no", j);
+        		key = "0"+j;
 			}
-			json.addProperty("day", selectDay);
-    		json.addProperty("num", "      ");
-    		json.addProperty("bsg", "    ");
-    		json.addProperty("bsgType", "    ");
-    		json.addProperty("wxType", "    ");
-    		array.add(json);
+			CqsscData cqsscData = dataMap.get(key);
+			JsonObject json = new JsonObject();
+			if(cqsscData==null){
+				if(j<10){
+					json.addProperty("no", "00"+j);
+				}else if(j<100){
+					json.addProperty("no", "0"+j);
+				}else{
+					json.addProperty("no", j);
+				}
+				json.addProperty("day", selectDay);
+				json.addProperty("num", "      ");
+				json.addProperty("bsg", "    ");
+				json.addProperty("bsgType", "    ");
+				json.addProperty("wxType", "    ");
+				array.add(json);
+			}else{
+				json.addProperty("day", cqsscData.getDAY().substring(0,8));
+				json.addProperty("no", cqsscData.getDAY().substring(8, 11));
+				json.addProperty("num", cqsscData.getNum());
+				Integer bsg = cqsscData.getIsBsg();
+				Integer bsgType = cqsscData.getBsgType();
+				Integer wxType = cqsscData.getWxType();
+				if(bsg!=null){
+					if(bsg.intValue()==1){
+						json.addProperty("bsg", "1");
+					}else if(bsg.intValue()==2){
+						json.addProperty("bsg", "2");
+					}else{
+						json.addProperty("bsg", "0");
+					}
+				}else{
+					json.addProperty("bsg", "0");
+				}
+				if(bsgType!=null){
+					json.addProperty("bsgType", bsgType);
+				}else{
+					json.addProperty("bsgType", "0");
+				}
+
+				if(wxType!=null){
+					json.addProperty("wxType", wxType.toString());
+				}else{
+					json.addProperty("wxType", "0");
+				}
+				array.add(json);
+			}
 		}
         return array.toString();
 	}
@@ -170,6 +171,42 @@ public class CqsscController {
 			}
         }
         return array.toString();
+	}
+
+
+	@RequestMapping(value="/getZsList")
+	@ResponseBody
+	private String getZsList(HttpServletRequest request){
+		DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");
+		//时间解析
+		String currentDay = DateTime.now().toString(format);
+		List<CqsscData> list =  service.getBzList(currentDay);
+		JsonArray array = new JsonArray();
+		for(int i=0;i<list.size();i++){
+			CqsscData data = list.get(i);
+			System.out.println(data.getDAY()+"---"+currentDay);
+			if(Integer.valueOf(data.getDAY()).intValue()<=Integer.valueOf(currentDay).intValue()) {
+				System.out.println("======="+data.getDAY()+"---"+currentDay);
+				JsonObject json = new JsonObject();
+				json.addProperty("day", data.getDAY());
+				json.addProperty("isWqb", data.getIsWqb());
+				json.addProperty("isWqs", data.getIsWqs());
+				json.addProperty("isWqg", data.getIsWqg());
+				json.addProperty("isWbs", data.getIsWbs());
+				json.addProperty("isWbg", data.getIsWbg());
+				json.addProperty("isWsg", data.getIsWsg());
+				json.addProperty("isQbs", data.getIsQbs());
+				json.addProperty("isQbg", data.getIsQbg());
+				json.addProperty("isQsg", data.getIsQsg());
+				json.addProperty("isBsg", data.getIsBsg());
+				json.addProperty("wxType", data.getWxType());
+				json.addProperty("bsgType", data.getBsgType());
+				json.addProperty("bz30", data.getZ30());
+				json.addProperty("bz20", data.getZ20());
+				array.add(json);
+			}
+		}
+		return array.toString();
 	}
 
 
@@ -241,6 +278,38 @@ public class CqsscController {
 			object3.put("type","category");
 			object3.put("data",dayList);
 			rtnList.add(object3);
+		}
+		return rtnList.toString();
+	}
+
+	@RequestMapping(value="/getZsNum")
+	@ResponseBody
+	private String getZsNum(HttpServletRequest request){
+		List<JSONObject> rtnList = new ArrayList<>();
+		String selectMonth = request.getParameter("selectMonth");
+		if(!StringUtils.isNotBlank(selectMonth)){
+			DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMM");
+			//时间解析
+			selectMonth = DateTime.now().toString(format);
+		}
+		List<CqsscData> list =  service.getZsNum(selectMonth);
+		for(CqsscData data:list){
+			int maxNum = data.getNumB();
+			int minNum = data.getNumB();
+			if(data.getNumS()>maxNum){
+				maxNum = data.getNumS();
+			}
+			if(data.getNumG()>maxNum){
+				maxNum = data.getNumG();
+			}
+			if(data.getNumS()<minNum){
+				minNum = data.getNumS();
+			}
+			if(data.getNumG()<minNum){
+				minNum = data.getNumG();
+			}
+			data.setNumZs(minNum+","+maxNum);
+			cqsscMapper.updateByPrimaryKeySelective(data);
 		}
 		return rtnList.toString();
 	}

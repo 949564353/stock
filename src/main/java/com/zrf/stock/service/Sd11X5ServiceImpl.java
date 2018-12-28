@@ -1,5 +1,6 @@
 package com.zrf.stock.service;
 
+import com.zrf.stock.entity.Gd11X5Data;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,6 +17,12 @@ public class Sd11X5ServiceImpl implements Sd11X5ServiceI {
 	@Override
 	public List<Sd11X5Data> getCurrentNum(String currentDay){
 		List<Sd11X5Data> data = sd11X5DataMapper.selectCurrentDayNums(currentDay);
+		return data;
+	}
+
+	@Override
+	public List<Sd11X5Data> getMiddleCount(String currentDay){
+		List<Sd11X5Data> data = sd11X5DataMapper.getMiddleCount(currentDay);
 		return data;
 	}
 

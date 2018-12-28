@@ -3,6 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>上海11选5-单双</title>
 	<link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="js/bootstrap-table/bootstrap-table.css" />
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>

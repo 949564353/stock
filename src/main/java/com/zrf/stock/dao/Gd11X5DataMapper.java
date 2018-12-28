@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface Gd11X5DataMapper {
 	List<Gd11X5Data> selectCurrentDayNums(String ID);
+    List<Gd11X5Data> getMiddleCount(String ID);
     List<Gd11X5Data> getZ5(String ID);
 	List<Gd11X5Data> getBzList(String ID) ;
     List<Gd11X5Data> getZs10List(String ID) ;

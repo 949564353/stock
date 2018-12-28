@@ -41,6 +41,13 @@
     from sd11x5_open_data
     where day like "%"#{ID}"%"
   </select>
+  <select id="getMiddleCount" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select num_middle,count(1) as odd_num
+    from sd11x5_open_data
+    where day like "%"#{ID}"%"
+    group by num_middle
+    order by count(1) desc
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from sd11x5_open_data
     where id = #{ID,jdbcType=VARCHAR}

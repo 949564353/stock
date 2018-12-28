@@ -3,6 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>新疆-五星</title>
 	<link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap.css" />
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/dateformat-min.js"></script>
@@ -41,6 +42,52 @@
 
         }
 
+        function changeCount() {
+            var count = document.getElementById("count");
+            var value = count.options[count.selectedIndex].value;
+            getZ5ResultData(value);
+        }
+
+        function checkNumber(str)
+        {
+            var re =  /^[0-9-]*$/;  //判断字符串是否为数字
+            if (!re.test(str))
+            {
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function getZ5ResultData(count){
+            $.ajax({
+                url : 'xjssc/getZ5.sc',// 跳转到 action
+                type : 'post',
+                cache : false,
+                async: false,
+                data : {
+                    num:count
+                },
+                dataType : 'json',
+                success : function(obj) {
+                    if(obj!=null && obj.length>0){
+                        for(var i=0;i<obj.length;i++){
+                            var html = $.trim($("#"+obj[i].no).text());
+                            if(checkNumber(html)){
+                                var no = html.split("-")[0];
+                                if(obj[i].num!=""){
+                                    $("#"+obj[i].no).html("&nbsp;&nbsp;<b>"+no+"-"+obj[i].num+"</b>");
+                                }else{
+                                    $("#"+obj[i].no).html("&nbsp;&nbsp;"+no);
+                                }
+
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
 
         function getResultData(selectDay){
             $.ajax({
@@ -59,9 +106,9 @@
                         for(var i=0;i<obj.length;i++){
                             var typeStyle = obj[i].wxType;
                             if(obj[i].wxType=="1"){
-                                typeStyle = "<font color='red'><b>组30</b></font>";
+                                typeStyle = "<font color='#0000FF'><b>组30</b></font>";
                             }else if(obj[i].wxType=="2"){
-                                typeStyle = "<font color='#0000FF'><b>组20</b></font>";
+                                typeStyle = "<font color='red'><b>组20</b></font>";
                             }else if(obj[i].wxType=="3"){
                                 typeStyle = "<font color='#00FF00'><b>组10</b></font>";
                             }else if(obj[i].wxType=="4"){

@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface Sd11X5ServiceI {
 	public List<Sd11X5Data> getCurrentNum(String currentDay);
+	public List<Sd11X5Data> getMiddleCount(String currentDay);
 	public List<Sd11X5Data> getZ5(String currentDay);
 	public List<Sd11X5Data> getBzList(String currentDay);
 	public List<Sd11X5Data> getZs10List(String currentDay);

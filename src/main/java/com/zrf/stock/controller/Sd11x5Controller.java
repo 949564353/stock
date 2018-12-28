@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.zrf.stock.dao.CqsscDayMapper;
 import com.zrf.stock.dao.Sd11X5DataMapper;
+import com.zrf.stock.entity.Gd11X5Data;
 import com.zrf.stock.entity.Sd11X5Data;
 import com.zrf.stock.service.Sd11X5ServiceI;
 import org.apache.commons.lang.StringUtils;
@@ -20,6 +21,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value="/sd11x5")
@@ -81,6 +84,26 @@ public class Sd11x5Controller {
         return array.toString();
 	}
 
+
+	@RequestMapping(value="/getMiddleCount")
+	@ResponseBody
+	private String getMiddleCount(HttpServletRequest request){
+		String selectDay = request.getParameter("selectDay");
+		if(!StringUtils.isNotBlank(selectDay)){
+			DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");
+			//时间解析
+			selectDay = DateTime.now().toString(format);
+		}
+		List<Sd11X5Data> list =  service.getMiddleCount(selectDay);
+		Map<String,Integer> map = list.stream().collect(Collectors.toMap(Sd11X5Data::getNumMiddle,Sd11X5Data::getOddNum));
+
+		String rtnStr = "";
+		for (Sd11X5Data data:list){
+			rtnStr += data.getNumMiddle()+":"+data.getOddNum()+";  ";
+		}
+
+		return rtnStr;
+	}
 
 //	@RequestMapping(value="/getZ5")
 //	@ResponseBody

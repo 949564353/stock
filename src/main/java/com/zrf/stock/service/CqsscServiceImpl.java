@@ -44,6 +44,12 @@ public class CqsscServiceImpl implements CqsscServiceI {
 	}
 
 	@Override
+	public List<CqsscData> getZsNum(String currentMonth){
+		List<CqsscData> data = cqsscMapper.getZsNum(currentMonth);
+		return data;
+	}
+
+	@Override
 	public List<CqsscData> getZs10List(String currentDay){
 		List<CqsscData> data = cqsscMapper.getZs10List(currentDay);
 		return data;

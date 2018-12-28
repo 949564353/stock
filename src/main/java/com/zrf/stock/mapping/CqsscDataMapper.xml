@@ -22,6 +22,7 @@
     <result column="is_qsg" jdbcType="INTEGER" property="isQsg" />
     <result column="bsg_type" jdbcType="INTEGER" property="bsgType" />
     <result column="wx_type" jdbcType="INTEGER" property="wxType" />
+    <result column="num_zs" jdbcType="VARCHAR" property="numZs" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <resultMap id="BaseResultExtendMap" type="com.zrf.stock.entity.CqsscData">
@@ -45,6 +46,7 @@
     <result column="is_qsg" jdbcType="INTEGER" property="isQsg" />
     <result column="bsg_type" jdbcType="INTEGER" property="bsgType" />
     <result column="wx_type" jdbcType="INTEGER" property="wxType" />
+    <result column="num_zs" jdbcType="VARCHAR" property="numZs" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="z30"  property="z30" />
     <result column="z20"  property="z20" />
@@ -52,7 +54,7 @@
 
   <sql id="Base_Column_List">
     id, day, num, num_w, num_q, num_b, num_s, num_g, is_wqb, is_wqs, is_wqg, is_wbs,
-    is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, bsg_type, wx_type, create_time
+    is_wbg, is_qbs, is_qbg, is_bsg, is_wsg, is_qsg, bsg_type, wx_type, create_time,num_zs
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
@@ -76,7 +78,7 @@
       num_g, is_wqb, is_wqs,
       is_wqg, is_wbs, is_wbg,
       is_qbs, is_qbg, is_bsg,
-      is_wsg, is_qsg, bsg_type, wx_type, create_time
+      is_wsg, is_qsg, bsg_type, wx_type, create_time,num_zs
       )
     values (#{ID,jdbcType=VARCHAR}, #{DAY,jdbcType=VARCHAR}, #{num,jdbcType=VARCHAR},
       #{numW,jdbcType=INTEGER}, #{numQ,jdbcType=INTEGER}, #{numB,jdbcType=INTEGER}, #{numS,jdbcType=INTEGER},
@@ -84,7 +86,7 @@
       #{isWqg,jdbcType=INTEGER}, #{isWbs,jdbcType=INTEGER}, #{isWbg,jdbcType=INTEGER},
       #{isQbs,jdbcType=INTEGER}, #{isQbg,jdbcType=INTEGER}, #{isBsg,jdbcType=INTEGER},
       #{isWsg,jdbcType=INTEGER}, #{isQsg,jdbcType=INTEGER}, #{bsgType,jdbcType=INTEGER},
-      #{wxType,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
+      #{wxType,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},#{numZs,jdbcType=VARCHAR},
       )
   </insert>
   <insert id="insertSelective" parameterType="com.zrf.stock.entity.CqsscData">
@@ -147,6 +149,9 @@
       <if test="createTime != null">
         create_time,
       </if>
+      <if test="numZs != null">
+        num_zs,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="ID != null">
@@ -205,6 +210,9 @@
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="numZs != null">
+        #{numZs,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -271,6 +279,9 @@
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="numZs != null">
+        num_zs = #{numZs,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{ID,jdbcType=VARCHAR}
   </update>
@@ -295,7 +306,8 @@
       is_qsg = #{isQsg,jdbcType=INTEGER},
       bsg_type = #{bsgType,jdbcType=INTEGER},
       wx_type = #{wxType,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      num_zs = #{numZs,jdbcType=VARCHAR},
     where id = #{ID,jdbcType=VARCHAR}
   </update>
 
@@ -315,6 +327,13 @@
           ON a.day = b.day
           WHERE b.z30 IS NOT NULL AND a.day LIKE "%"#{ID}"%"
       ORDER BY a.day asc
+  </select>
+
+  <select id="getZsNum" parameterType="java.lang.String" resultMap="BaseResultExtendMap">
+    select
+    <include refid="Base_Column_List" />
+    from cqssc_open_data
+    where day LIKE "%"#{ID}"%" and is_bsg = 1
   </select>
 
   <select id="getZs10List" parameterType="java.lang.String" resultMap="BaseResultMap">

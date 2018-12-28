@@ -20,6 +20,12 @@ public class Gd11X5ServiceImpl implements Gd11X5ServiceI {
 	}
 
 	@Override
+	public List<Gd11X5Data> getMiddleCount(String currentDay){
+		List<Gd11X5Data> data = gd11X5DataMapper.getMiddleCount(currentDay);
+		return data;
+	}
+
+	@Override
 	public List<Gd11X5Data> getZ5(String currentDay){
 		List<Gd11X5Data> data = gd11X5DataMapper.getZ5(currentDay);
 		return data;

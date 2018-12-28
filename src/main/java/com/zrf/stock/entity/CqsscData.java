@@ -47,6 +47,8 @@ public class CqsscData {
 
     private Integer z20;
 
+    private String numZs;
+
     private Date createTime;
 
     public String getID() {
@@ -232,5 +234,12 @@ public class CqsscData {
     public void setZ20(Integer z20) {
         this.z20 = z20;
     }
-    
+
+    public String getNumZs() {
+        return numZs;
+    }
+
+    public void setNumZs(String numZs) {
+        this.numZs = numZs;
+    }
 }

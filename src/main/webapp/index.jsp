@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>时时彩平台开奖情况</title>
+	<title>主页-时时彩</title>
 	<link rel="stylesheet" type="text/css"
 		  href="js/bootstrap/css/bootstrap.css" />
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
@@ -41,12 +41,12 @@
 		<a href="index_zs10_xj.jsp" target="_blank">全十路</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	</H1>
 
-	<H1>
-		<font color="red">11选5：</font>
-	</H1>
-	<H1>
-		<a href="index_11x5.jsp" target="_blank">综合页面</a>&nbsp;&nbsp;&nbsp;&nbsp;
-	</H1>
+	<%--<H1>--%>
+		<%--<font color="red">11选5：</font>--%>
+	<%--</H1>--%>
+	<%--<H1>--%>
+		<%--<a href="index_11x5.jsp" target="_blank">综合页面</a>&nbsp;&nbsp;&nbsp;&nbsp;--%>
+	<%--</H1>--%>
 </div>
 
 </body>

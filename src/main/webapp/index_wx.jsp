@@ -3,6 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>重庆-五星</title>
 	<link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap.css" />
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/dateformat-min.js"></script>
@@ -38,7 +39,53 @@
         function requestData(){
             var selectDay = $("#selectDay").val();
             getResultData(selectDay);
+        }
 
+        function changeCount() {
+            var count = document.getElementById("count");
+            var value = count.options[count.selectedIndex].value;
+            getZ5ResultData(value);
+        }
+
+
+        function checkNumber(str)
+        {
+            var re =  /^[0-9-]*$/;  //判断字符串是否为数字
+            if (!re.test(str))
+            {
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function getZ5ResultData(count){
+            $.ajax({
+                url : 'cqssc/getZ5.sc',// 跳转到 action
+                type : 'post',
+                cache : false,
+                async: false,
+                data : {
+                    num:count
+                },
+                dataType : 'json',
+                success : function(obj) {
+                    if(obj!=null && obj.length>0){
+                        for(var i=0;i<obj.length;i++){
+                            var html = $.trim($("#"+obj[i].no).text());
+                            if(checkNumber(html)){
+                                var no = html.split("-")[0];
+                                if(obj[i].num!=""){
+                                    $("#"+obj[i].no).html("&nbsp;&nbsp;<b>"+no+"-"+obj[i].num+"</b>");
+                                }else{
+                                    $("#"+obj[i].no).html("&nbsp;&nbsp;"+no);
+                                }
+
+                            }
+                        }
+                    }
+                }
+            });
         }
 
 
@@ -59,9 +106,9 @@
                         for(var i=0;i<obj.length;i++){
                             var typeStyle = obj[i].wxType;
                             if(obj[i].wxType=="1"){
-                                typeStyle = "<font color='red'><b>组30</b></font>";
+                                typeStyle = "<font color='#0000FF'><b>组30</b></font>";
                             }else if(obj[i].wxType=="2"){
-                                typeStyle = "<font color='#0000FF'><b>组20</b></font>";
+                                typeStyle = "<font color='red'><b>组20</b></font>";
                             }else if(obj[i].wxType=="3"){
                                 typeStyle = "<font color='#00FF00'><b>组10</b></font>";
                             }else if(obj[i].wxType=="4"){
@@ -132,7 +179,14 @@
 	<a href="javascript:afterDay()">⇨</a>
 	<img onClick="WdatePicker({el:'selectDay',dateFmt:'yyyyMMdd',onpicked:function(dp){showData(dp);}})" src="js/My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle" style="cursor:pointer" />
 
-	开奖号码
+	开奖号码<select id="count" onchange="changeCount();" style="width: 50px;">
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+</select>
 </div>
 <table align="center" border="1">
 	<tr>

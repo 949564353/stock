@@ -1,6 +1,8 @@
 package com.zrf.stock.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -43,63 +45,59 @@ public class XjsscController {
 		}
         //String currentDay = "20170531";
         List<XjsscData> list =  service.getCurrentNum(selectDay);
-        JsonArray array = new JsonArray();
-        String lastNo = "";
-        for(int i=0;i<list.size();i++){
-        	XjsscData data = list.get(i);
-    		JsonObject json = new JsonObject();
-    		json.addProperty("day", data.getDAY().substring(0,8));
-    		json.addProperty("no", data.getDAY().substring(8, 11));
-    		json.addProperty("num", data.getNum());
-    		Integer bsg = data.getIsBsg();
-			Integer wxType = data.getWxType();
-    		if(bsg!=null){
-    			if(bsg.intValue()==1){
-    				json.addProperty("bsg", "1");        		
-    			}else if(bsg.intValue()==2){
-    				json.addProperty("bsg", "2");
-    			}else{
-    				json.addProperty("bsg", "0");
-    			}
-    		}else{
-    			json.addProperty("bsg", "0");
-    		}
 
-			if(wxType!=null){
-				json.addProperty("wxType", wxType.toString());
-			}else{
-				json.addProperty("wxType", "0");
-			}
-    		
-    		if(list.size()==i+1){
-    			lastNo = data.getDAY().substring(8, 11);
-    		}
-    		array.add(json);
-        }
-
-        int lastNum = 0;
-        if(list.size()!=0){
-			String lastNumStr = list.get(list.size()-1).getDAY().substring(8,11);
-			lastNum = Integer.valueOf(lastNumStr);
-		}
-
-		//剩下的未开奖的数据
-        for(int j=lastNum+1;j<=96;j++){
-    		JsonObject json = new JsonObject();
+		Map<String, XjsscData> dataMap = new HashMap<>();
+		list.stream().forEach(data -> dataMap.put(data.getDAY().substring(8,11), data));
+		JsonArray array = new JsonArray();
+		for(int j=1;j<=120;j++){
+			String key = ""+j;
 			if(j<10){
-	    		json.addProperty("no", "00"+j);
+				key = "00"+j;
 			}else if(j<100){
-	    		json.addProperty("no", "0"+j);
-			}else{
-	    		json.addProperty("no", j);
+				key = "0"+j;
 			}
-			json.addProperty("day", selectDay);
-    		json.addProperty("num", "      ");
-    		json.addProperty("bsg", "    ");
-			json.addProperty("bsgType", "    ");
-			json.addProperty("wxType", "    ");
-    		array.add(json);
-		}
+			XjsscData xjsscData = dataMap.get(key);
+			JsonObject json = new JsonObject();
+			if(xjsscData==null){
+				if(j<10){
+					json.addProperty("no", "00"+j);
+				}else if(j<100){
+					json.addProperty("no", "0"+j);
+				}else{
+					json.addProperty("no", j);
+				}
+				json.addProperty("day", selectDay);
+				json.addProperty("num", "      ");
+				json.addProperty("bsg", "    ");
+				json.addProperty("bsgType", "    ");
+				json.addProperty("wxType", "    ");
+				array.add(json);
+			}else{
+				json.addProperty("day", xjsscData.getDAY().substring(0,8));
+				json.addProperty("no", xjsscData.getDAY().substring(8, 11));
+				json.addProperty("num", xjsscData.getNum());
+				Integer bsg = xjsscData.getIsBsg();
+				Integer wxType = xjsscData.getWxType();
+				if(bsg!=null){
+					if(bsg.intValue()==1){
+						json.addProperty("bsg", "1");
+					}else if(bsg.intValue()==2){
+						json.addProperty("bsg", "2");
+					}else{
+						json.addProperty("bsg", "0");
+					}
+				}else{
+					json.addProperty("bsg", "0");
+				}
+
+				if(wxType!=null){
+					json.addProperty("wxType", wxType.toString());
+				}else{
+					json.addProperty("wxType", "0");
+				}
+				array.add(json);
+			}
+        }
         return array.toString();
 	}
 	

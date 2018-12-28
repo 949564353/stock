@@ -85,6 +85,27 @@ public class Gd11x5Controller {
 	}
 
 
+	@RequestMapping(value="/getMiddleCount")
+	@ResponseBody
+	private String getMiddleCount(HttpServletRequest request){
+		String selectDay = request.getParameter("selectDay");
+		if(!StringUtils.isNotBlank(selectDay)){
+			DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");
+			//时间解析
+			selectDay = DateTime.now().toString(format);
+		}
+		List<Gd11X5Data> list =  service.getMiddleCount(selectDay);
+		Map<String,Integer> map = list.stream().collect(Collectors.toMap(Gd11X5Data::getNumMiddle,Gd11X5Data::getOddNum));
+
+		String rtnStr = "";
+		for (Gd11X5Data data:list){
+			rtnStr += data.getNumMiddle()+":"+data.getOddNum()+";  ";
+		}
+
+		return rtnStr;
+	}
+
+
 //	@RequestMapping(value="/getZ5")
 //	@ResponseBody
 //	private String getZ5(HttpServletRequest request){
