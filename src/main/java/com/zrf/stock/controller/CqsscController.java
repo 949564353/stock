@@ -165,6 +165,7 @@ public class CqsscController {
 				json.addProperty("isBsg", data.getIsBsg());
 				json.addProperty("wxType", data.getWxType());
 				json.addProperty("bsgType", data.getBsgType());
+				json.addProperty("bz3", data.getZ3());
 				json.addProperty("bz30", data.getZ30());
 				json.addProperty("bz20", data.getZ20());
 				array.add(json);
@@ -180,7 +181,7 @@ public class CqsscController {
 		DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");
 		//时间解析
 		String currentDay = DateTime.now().toString(format);
-		List<CqsscData> list =  service.getBzList(currentDay);
+		List<CqsscData> list =  service.getZsList(currentDay);
 		JsonArray array = new JsonArray();
 		for(int i=0;i<list.size();i++){
 			CqsscData data = list.get(i);
@@ -189,20 +190,19 @@ public class CqsscController {
 				System.out.println("======="+data.getDAY()+"---"+currentDay);
 				JsonObject json = new JsonObject();
 				json.addProperty("day", data.getDAY());
-				json.addProperty("isWqb", data.getIsWqb());
-				json.addProperty("isWqs", data.getIsWqs());
-				json.addProperty("isWqg", data.getIsWqg());
-				json.addProperty("isWbs", data.getIsWbs());
-				json.addProperty("isWbg", data.getIsWbg());
-				json.addProperty("isWsg", data.getIsWsg());
-				json.addProperty("isQbs", data.getIsQbs());
-				json.addProperty("isQbg", data.getIsQbg());
-				json.addProperty("isQsg", data.getIsQsg());
-				json.addProperty("isBsg", data.getIsBsg());
-				json.addProperty("wxType", data.getWxType());
-				json.addProperty("bsgType", data.getBsgType());
-				json.addProperty("bz30", data.getZ30());
-				json.addProperty("bz20", data.getZ20());
+				json.addProperty("zs45", data.getZs45());
+				json.addProperty("zs01", data.getZs01());
+				json.addProperty("zs04", data.getZs04());
+				json.addProperty("zs24", data.getZs24());
+				json.addProperty("zs28", data.getZs28());
+				json.addProperty("zs68", data.getZs68());
+				json.addProperty("zs79", data.getZs79());
+				json.addProperty("zs13", data.getZs13());
+				json.addProperty("zs36", data.getZs36());
+				json.addProperty("zs89", data.getZs89());
+				json.addProperty("zs56", data.getZs56());
+				json.addProperty("zs06", data.getZs06());
+				json.addProperty("zs08", data.getZs08());
 				array.add(json);
 			}
 		}

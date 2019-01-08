@@ -44,6 +44,18 @@ public class XjsscServiceImpl implements XjsscServiceI {
 	}
 
 	@Override
+	public List<XjsscData> getZsList(String currentDay){
+		List<XjsscData> data = xjsscMapper.getZsList(currentDay);
+		return data;
+	}
+
+	@Override
+	public List<XjsscData> getZsNum(String currentMonth){
+		List<XjsscData> data = xjsscMapper.getZsNum(currentMonth);
+		return data;
+	}
+
+	@Override
 	public List<XjsscData> getZs10List(String currentDay){
 		List<XjsscData> data = xjsscMapper.getZs10List(currentDay);
 		return data;

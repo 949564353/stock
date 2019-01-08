@@ -9,6 +9,7 @@ public interface CqsscDataMapper {
     List<CqsscData> getZ5(String ID);
 	List<CqsscData> getBzList(String ID) ;
     List<CqsscData> getZs10List(String ID) ;
+    List<CqsscData> getZsList(String ID) ;
     List<CqsscData> getCountNum(String ID) ;
     List<CqsscData> getZsNum(String ID) ;
     int deleteByPrimaryKey(String ID);

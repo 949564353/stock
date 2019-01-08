@@ -331,6 +331,27 @@ function requestData(){
                 },
                 align: "center",//水平
                 valign: "middle"//垂直
+            },
+            {
+                title: "组3",
+                field: "bz3",
+                width: "30px",
+                cellStyle : function cellStyle(value, row, index) {
+                    if(value>0)
+                        return {
+                            css : {
+                                "background-color" : "#87cefa"
+                            }
+                        };
+                    else
+                        return {
+                            css : {
+                            }
+                        };
+
+                },
+                align: "center",//水平
+                valign: "middle"//垂直
             }
         ]
     });
@@ -352,7 +373,7 @@ function requestData(){
 	<div align="center" id="day" style="font-size:24px;margin-top:20px">
 		新疆时时彩豹子开奖情况
 	</div>
-	<div class="container">
+	<div class="container" style="width: 960px">
    	 	<table id="bzTable"></table>
 	</div>
 	

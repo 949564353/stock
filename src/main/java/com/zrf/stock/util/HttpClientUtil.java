@@ -68,8 +68,8 @@ public class HttpClientUtil
 	public static String SSC_URL = "http://a.apiplus.net/newly.do?token=2a2d75c8c792176f&format=json";
 	public static String SSC_URL_DAY = "http://a.apiplus.net/daily.do?token=2a2d75c8c792176f&format=json";
 
-	public static String beginDay = "2018-12-24";
-	public static String endDay = "2018-12-24";
+	public static String beginDay = "2019-01-05";
+	public static String endDay = "2019-01-08";
 
 	@Scheduled(cron="0 2/10 10-22 * * ?")
 	public void execute()
@@ -89,7 +89,7 @@ public class HttpClientUtil
 		insertData("tjssc", SSC_URL);
 	}
 
-	@Scheduled(cron="0 3/10 10-23,23,0,1 * * ?")
+	@Scheduled(cron="0 2/10 10-23,23,0,1 * * ?")
 	public void executexj() throws ClientProtocolException, IOException
 	{
 		insertData("xjssc", SSC_URL);
@@ -113,16 +113,16 @@ public class HttpClientUtil
 		insertData("sh11x5", SSC_URL);
 	}
 
-	@Scheduled(cron="0 54 10 * * ?")
+	@Scheduled(cron="0 48 13 * * ?")
 	public void executeDays() throws ParseException, IOException, InterruptedException
 	{
 		try {
 			//executeDayData("xjssc", beginDay, endDay);
-			execute11X5DayData("sd11x5", beginDay, endDay);
-			execute11X5DayData("sh11x5", beginDay, endDay);
-			execute11X5DayData("gd11x5", beginDay, endDay);
-			executeDayData("xjssc", beginDay, endDay);
-			executeDayData("cqssc", beginDay, endDay);
+//			execute11X5DayData("sd11x5", beginDay, endDay);
+//			execute11X5DayData("sh11x5", beginDay, endDay);
+//			execute11X5DayData("gd11x5", beginDay, endDay);
+//			executeDayData("xjssc", beginDay, endDay);
+//			executeDayData("cqssc", beginDay, endDay);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -464,6 +464,8 @@ public class HttpClientUtil
 		Integer dataS = cell.getNumS();
 		Integer dataG = cell.getNumG();
 
+
+
 		cell.setIsWqb(getType(dataW.intValue(), dataQ.intValue(), dataB.intValue()));
 		cell.setIsQbs(getType(dataQ.intValue(), dataB.intValue(), dataS.intValue()));
 		cell.setIsBsg(getType(dataB.intValue(), dataS.intValue(), dataG.intValue()));
@@ -477,6 +479,24 @@ public class HttpClientUtil
 		cell.setBsgType(is012(dataB.intValue(), dataS.intValue(), dataG.intValue()));
 		int[] wxdata = { dataW.intValue(), dataQ.intValue(), dataB.intValue(), dataS.intValue(), dataG.intValue() };
 		cell.setWxType(getWxType(wxdata));
+
+		if(cell.getIsBsg().intValue()==1){
+			int maxNum = cell.getNumB();
+			int minNum = cell.getNumB();
+			if(cell.getNumS()>maxNum){
+				maxNum = cell.getNumS();
+			}
+			if(cell.getNumG()>maxNum){
+				maxNum = cell.getNumG();
+			}
+			if(cell.getNumS()<minNum){
+				minNum = cell.getNumS();
+			}
+			if(cell.getNumG()<minNum){
+				minNum = cell.getNumG();
+			}
+			cell.setNumZs(minNum+","+maxNum);
+		}
 		return cell;
 	}
 
@@ -523,6 +543,25 @@ public class HttpClientUtil
 		cell.setBsgType(is012(dataB.intValue(), dataS.intValue(), dataG.intValue()));
 		int[] wxdata = { dataW.intValue(), dataQ.intValue(), dataB.intValue(), dataS.intValue(), dataG.intValue() };
 		cell.setWxType(getWxType(wxdata));
+
+		if(cell.getIsBsg().intValue()==1){
+			int maxNum = cell.getNumB();
+			int minNum = cell.getNumB();
+			if(cell.getNumS()>maxNum){
+				maxNum = cell.getNumS();
+			}
+			if(cell.getNumG()>maxNum){
+				maxNum = cell.getNumG();
+			}
+			if(cell.getNumS()<minNum){
+				minNum = cell.getNumS();
+			}
+			if(cell.getNumG()<minNum){
+				minNum = cell.getNumG();
+			}
+			cell.setNumZs(minNum+","+maxNum);
+		}
+
 		return cell;
 	}
 

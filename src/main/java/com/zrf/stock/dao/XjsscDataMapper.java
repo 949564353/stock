@@ -9,6 +9,8 @@ public interface XjsscDataMapper {
 	List<XjsscData> selectCurrentDayNums(String ID);
 	List<XjsscData> getBzList(String ID) ;
     List<XjsscData> getAllData() ;
+    List<XjsscData> getZsNum(String ID) ;
+    List<XjsscData> getZsList(String ID) ;
     int deleteByPrimaryKey(String ID);
 
     int insert(XjsscData record);

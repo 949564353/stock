@@ -1,5 +1,6 @@
 package com.zrf.stock.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -7,6 +8,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.alibaba.fastjson.JSONObject;
 import com.zrf.stock.dao.XjsscDataMapper;
 import com.zrf.stock.util.HttpClientUtil;
 import org.apache.commons.lang.StringUtils;
@@ -128,6 +130,7 @@ public class XjsscController {
         		json.addProperty("isBsg", data.getIsBsg());
 				json.addProperty("wxType", data.getWxType());
 				json.addProperty("bsgType", data.getBsgType());
+				json.addProperty("bz3", data.getZ3());
 				json.addProperty("bz30", data.getZ30());
 				json.addProperty("bz20", data.getZ20());
         		array.add(json);
@@ -169,6 +172,73 @@ public class XjsscController {
 			json.addProperty("isQsg", data.getIsQsg());
 			json.addProperty("isBsg", data.getIsBsg());
 			array.add(json);
+		}
+		return array.toString();
+	}
+
+
+	@RequestMapping(value="/getZsNum")
+	@ResponseBody
+	private String getZsNum(HttpServletRequest request){
+		List<JSONObject> rtnList = new ArrayList<>();
+		String selectMonth = request.getParameter("selectMonth");
+		if(!StringUtils.isNotBlank(selectMonth)){
+			DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMM");
+			//时间解析
+			selectMonth = DateTime.now().toString(format);
+		}
+		List<XjsscData> list =  service.getZsNum(selectMonth);
+		for(XjsscData data:list){
+			int maxNum = data.getNumB();
+			int minNum = data.getNumB();
+			if(data.getNumS()>maxNum){
+				maxNum = data.getNumS();
+			}
+			if(data.getNumG()>maxNum){
+				maxNum = data.getNumG();
+			}
+			if(data.getNumS()<minNum){
+				minNum = data.getNumS();
+			}
+			if(data.getNumG()<minNum){
+				minNum = data.getNumG();
+			}
+			data.setNumZs(minNum+","+maxNum);
+			mapper.updateByPrimaryKeySelective(data);
+		}
+		return rtnList.toString();
+	}
+
+
+	@RequestMapping(value="/getZsList")
+	@ResponseBody
+	private String getZsList(HttpServletRequest request){
+		DateTimeFormatter format = DateTimeFormat.forPattern("yyyyMMdd");
+		//时间解析
+		String currentDay = DateTime.now().toString(format);
+		List<XjsscData> list =  service.getZsList(currentDay);
+		JsonArray array = new JsonArray();
+		for(int i=0;i<list.size();i++){
+			XjsscData data = list.get(i);
+			System.out.println(data.getDAY()+"---"+currentDay);
+			if(Integer.valueOf(data.getDAY()).intValue()<=Integer.valueOf(currentDay).intValue()) {
+				System.out.println("======="+data.getDAY()+"---"+currentDay);
+				JsonObject json = new JsonObject();
+				json.addProperty("day", data.getDAY());
+				json.addProperty("zs01", data.getZs01());
+				json.addProperty("zs03", data.getZs03());
+				json.addProperty("zs04", data.getZs04());
+				json.addProperty("zs06", data.getZs06());
+				json.addProperty("zs12", data.getZs12());
+				json.addProperty("zs14", data.getZs14());
+				json.addProperty("zs24", data.getZs24());
+				json.addProperty("zs28", data.getZs28());
+				json.addProperty("zs59", data.getZs59());
+				json.addProperty("zs67", data.getZs67());
+				json.addProperty("zs68", data.getZs68());
+				json.addProperty("zs79", data.getZs79());
+				array.add(json);
+			}
 		}
 		return array.toString();
 	}

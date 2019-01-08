@@ -9,7 +9,9 @@ public interface XjsscServiceI {
 	public List<XjsscData> getCurrentNum(String currentDay);
 	public List<XjsscData> getBzList(String currentDay);
 	public List<XjsscData> getZs10List(String currentDay);
+	public List<XjsscData> getZsList(String currentDay);
 	public XjsscData selectByPrimaryKey(String key);
+	public List<XjsscData> getZsNum(String currentDay);
 	public List<XjsscData> getAllData();
 	public int save(XjsscData data);
 }

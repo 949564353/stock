@@ -43,11 +43,27 @@ public class CqsscData {
     
     private Integer wxType;
 
+    private Integer z3;
+
     private Integer z30;
 
     private Integer z20;
 
     private String numZs;
+
+    private String zs45;
+    private String zs01;
+    private String zs04;
+    private String zs28;
+    private String zs24;
+    private String zs68;
+    private String zs79;
+    private String zs13;
+    private String zs36;
+    private String zs89;
+    private String zs56;
+    private String zs06;
+    private String zs08;
 
     private Date createTime;
 
@@ -241,5 +257,117 @@ public class CqsscData {
 
     public void setNumZs(String numZs) {
         this.numZs = numZs;
+    }
+
+    public String getZs45() {
+        return zs45;
+    }
+
+    public void setZs45(String zs45) {
+        this.zs45 = zs45;
+    }
+
+    public String getZs01() {
+        return zs01;
+    }
+
+    public String getZs04() {
+        return zs04;
+    }
+
+    public String getZs28() {
+        return zs28;
+    }
+
+    public String getZs24() {
+        return zs24;
+    }
+
+    public String getZs68() {
+        return zs68;
+    }
+
+    public String getZs79() {
+        return zs79;
+    }
+
+    public void setZs01(String zs01) {
+        this.zs01 = zs01;
+    }
+
+    public void setZs04(String zs04) {
+        this.zs04 = zs04;
+    }
+
+    public void setZs28(String zs28) {
+        this.zs28 = zs28;
+    }
+
+    public void setZs24(String zs24) {
+        this.zs24 = zs24;
+    }
+
+    public void setZs68(String zs68) {
+        this.zs68 = zs68;
+    }
+
+    public void setZs79(String zs79) {
+        this.zs79 = zs79;
+    }
+
+    public String getZs13() {
+        return zs13;
+    }
+
+    public String getZs36() {
+        return zs36;
+    }
+
+    public String getZs89() {
+        return zs89;
+    }
+
+    public String getZs56() {
+        return zs56;
+    }
+
+    public String getZs06() {
+        return zs06;
+    }
+
+    public String getZs08() {
+        return zs08;
+    }
+
+    public void setZs13(String zs13) {
+        this.zs13 = zs13;
+    }
+
+    public void setZs36(String zs36) {
+        this.zs36 = zs36;
+    }
+
+    public void setZs89(String zs89) {
+        this.zs89 = zs89;
+    }
+
+    public void setZs56(String zs56) {
+        this.zs56 = zs56;
+    }
+
+    public void setZs06(String zs06) {
+        this.zs06 = zs06;
+    }
+
+    public void setZs08(String zs08) {
+        this.zs08 = zs08;
+    }
+
+    public Integer getZ3() {
+        return z3;
+    }
+
+    public void setZ3(Integer z3) {
+        this.z3 = z3;
     }
 }
